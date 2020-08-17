@@ -7,11 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+User.destroy_all
+Unicorn.destroy_all
+Booking.destroy_all
+
 CITIES = %w( Paris Lyon Montpellier Toulouse Marseille Lille Strasbourg Bordeaux )
+
+MAGIC_POWERS = ["flying", "healing", "garden blooming", "yogi master", "fortune-telling"]
 
 10.times do
   user_name = Faker::Name.first_name
-  user = User.New(
+  user = User.new(
     pseudo: "#{user_name}#{rand(1..99)}",
     email: Faker::Internet.email(name: user_name),
     password: Faker::Internet.password(min_length: 8, max_length: 12),
@@ -37,13 +43,13 @@ end
 30.times do
   booking_start_date = Faker::Date.between(from: '2020-08-26', to: '2020-09-10')
   unicorn = Unicorn.all.to_a.sample
-  bookings = Booking.new(
+  booking = Booking.new(
     start_date: booking_start_date,
     end_date: Faker::Date.between(from: booking_start_date, to: '2020-09-15'),
     rating: rand(1..5),
     review: Faker::Lorem.paragraph(sentence_count: rand(1..5)),
     unicorn: unicorn,
-    user: User.where.not(unicorn: unicorn)
+    user: User.all.to_a.select { |user| user != unicorn.user  }.sample
   )
   booking.save
 end
