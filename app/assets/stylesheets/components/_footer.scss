@@ -2,17 +2,31 @@
   background: #F4F4F4;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 100px;
+  justify-content: center;
+  height: 250px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
+  background: linear-gradient(75deg, $pink, $light-blue);
+  flex-direction: column;
+  #logo-small {
+    width: 70px;
+  }
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
+
+.contact {
+  padding-top: 15px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif !important;
+  color: #a56cc1;
+  font-size: 13px;
+}
+
 .footer-links a {
-  color: black;
+  color: $purple;
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
@@ -20,7 +34,4 @@
 }
 .footer-links a:hover {
   opacity: 1;
-}
-.footer .fa-heart {
-  color: #D23333;
 }
