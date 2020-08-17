@@ -2,7 +2,7 @@ class Unicorn < ApplicationRecord
   has_many :bookings
   belongs_to :user
 
-
+  has_many_attached :photos
 
   MAGIC_POWERS = ["flying", "healing", "garden blooming", "yogi master", "fortune-telling"]
 
