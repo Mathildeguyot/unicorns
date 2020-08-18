@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  Rails.application.routes.draw do
+  devise_for :users,
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  end
   root to: 'pages#home'
   
   get '/unicorns', to: "unicorns#index"
@@ -7,5 +10,5 @@ Rails.application.routes.draw do
   post '/unicorns', to: 'unicorns#create'
   get '/unicorns/:id', to: 'unicorns#show', as: :unicorn_show
   get '/unicorns/:id', to: "booking#new", as: :new_booking
-
+  get '/bookings', to: "bookings#index"
 end
