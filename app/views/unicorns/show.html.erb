@@ -1,0 +1,29 @@
+<div>
+  <h1><%= @unicorn.name %></h1>
+  <% sum = 0 %>
+  <% count = 0 %>
+  <% @unicorn.bookings.each do |booking| %>
+    <% sum += booking.rating %>
+    <% count += 1 %>
+  <% end %>
+  <% average = sum / count %>
+  <%= average.times do %>
+    <i class="fas fa-star"></i>
+  <% end %>
+  <%= (5 - average).times do %>
+    <i class="far fa-star"></i>
+  <% end %>
+</div>
+<div>
+  <h2>by <%= @unicorn.user.pseudo %></h2>
+  <% @unicorn.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+  <h2>✨ <%= @unicorn.magic_power %></h2>
+  <h3><%= @unicorn.price %>€ / jour</h3>
+  <p><%= @unicorn.description %></p>
+</div>
+
+
+
+

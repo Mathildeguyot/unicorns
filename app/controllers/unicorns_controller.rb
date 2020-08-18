@@ -4,7 +4,9 @@ class UnicornsController < ApplicationController
     @unicorn = Unicorn.find(params[:id])
   end
 
+  private
+
   def unicorn_params
-    params.require(:unicorn).permit(:name, :magic_power, :rating, :description, :location, :price, :user)
+    params.require(:article).permit(photos: [])
   end
 end
