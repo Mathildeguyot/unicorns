@@ -1,0 +1,2 @@
+class UnicornsController < ApplicationController
+end
