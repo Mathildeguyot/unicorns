@@ -1,1 +1,22 @@
 // Specific CSS for your home-page
+.service {
+  width: 78%;
+  margin: 42px auto;
+  display: flex;
+  align-items: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  h2 {
+    font-family: $headers-font;
+  }
+  img {
+    width: 200px
+  }
+  .text {
+    flex-direction: column;
+    padding: 33px;
+    p {
+      text-justify: auto;
+    }
+  }
+}
