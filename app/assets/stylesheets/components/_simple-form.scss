@@ -1,0 +1,9 @@
+.form-control[readonly] {
+  background-color: white;
+  &:hover {
+    border: 1px solid $purple;
+  }
+  &:focus {
+    border: 1px solid $purple;
+  }
+}

@@ -1,1 +1,35 @@
-show.html.erb
+<div class="booking-card-container">
+  <div class="booking-card">
+    <div class="booking-card-price-per-half-day">
+      <p><strong class="price-per-half-day"><%= @unicorn.price %>€</strong>/demi-journée</p>
+    </div>
+
+    <div class="booking-card-calendar">
+      <div class="form-wrapper">
+
+        <%= simple_form_for :booking, method: "get" do |f| %>
+          <%= f.input :start_date, required: false, input_html: {id: "range_start"}, label:false %>
+          <%= f.hidden_field :end_date, required: false, input_html: {id: "range_end"}, label:false %>
+          <%= f.button :submit, "Book now", class: "btn btn-flat" %>
+        <% end %>
+  </div>
+    </div>
+    <div class="booking-card-price-details">
+
+      <div class="booking-card-price-details-list">
+        <div class="booking-card-price">
+          <p><%= @unicorn.price %>€ x <%= @booking.start_date %>j</p>
+          <p><%= @unicorn.price %>€</p>
+        </div>
+        <div class="booking-card-price">
+          <p>Frais de service</p>
+          <p><%=  %>€</p>
+        </div>
+      </div>
+      <div class="booking-card-price-total">
+        <%= %>
+      </div>
+
+    </div>
+  </div>
+</div>
