@@ -1,12 +1,16 @@
 body {
   font-family: 'Titillium Web', sans-serif;
   background-color: white;
+  color:#a56cc1;
 }
 
 h1 {
   font-family: 'Amaranth', sans-serif;
   font-weight: 400;
   margin: 20px 0 30px 0;
+  background: linear-gradient(to right, #dfaff6, #ffadda, #ffb5bc, #ffc4a6, #ffd6a0, #f7e0a1, #edeba6, #e0f5af, #cbf7bb, #b8f7ca, #a9f6d8, #9ff4e6);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .container-second {
@@ -20,8 +24,19 @@ h1 {
   margin-bottom: 70px;
 }
 
+
 #unicorn_name, #unicorn_magic_power, #unicorn_description, #unicorn_price, #unicorn_location, .btn-primary {
   border-radius: 10px;
+}
+
+#unicorn_photos {
+  display:block;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #dfaff6, #ffadda, #ffb5bc, #ffc4a6, #ffd6a0, #f7e0a1, #edeba6, #e0f5af, #cbf7bb, #b8f7ca, #a9f6d8, #9ff4e6);
+  color:#a56cc1;
+  border-color:white;
 }
 
 // Small devices (landscape phones, 576px and up)
