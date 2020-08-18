@@ -54,7 +54,7 @@
       </div>
 
 
-      <h3><%= @unicorn.price %>€ / jour</h3>
+      <h3><%= @unicorn.price %>€ /jour</h3>
 
 
       <div class="content">
@@ -75,47 +75,55 @@
           <p><%= booking.review %></p>
         <% end %>
       </div>
-
-
-<div class="booking-card-container">
-  <div class="booking-card">
-    <div class="booking-card-price-per-half-day">
-      <p><strong class="price-per-half-day"><span id="unicorn-price"><%= @unicorn.price %></span>€</strong>/demi-journée</p>
     </div>
 
-    <div class="booking-card-calendar">
-      <div class="form-wrapper">
 
-        <%= simple_form_for :booking, method: "get" do |f| %>
-          <%= f.input :start_date, required: false, input_html: {id: "start_date"}, label:false %>
-          <%= hidden_field_tag "booking-start" %>
-          <%= f.input :end_date, required: false, input_html: {id: "end_date"}, label:false %>
-          <%= hidden_field_tag "booking-end" %>
-          <%= f.button :submit, "Book now", class: "btn btn-flat" %>
-        <% end %>
-  </div>
-    </div>
-    <div class="booking-card-price-details">
+      <div class="booking-card-container">
 
-      <div class="booking-card-price-details-list">
-        <div class="booking-card-price">
-          <p><%= @unicorn.price %>€<span id="booking-duration"> x 1j</span></p>
-          <p><span id="unicorn-total-price"><%= @unicorn.price %>€</span></p>
-        </div>
-        <div class="booking-card-price">
-          <p>Frais de service</p>
-          <p><span id="service-fees"></span></p>
+        <div class="booking-card">
+
+          <div class="booking-card-price-per-half-day">
+            <p><strong class="price-per-half-day"><span id="unicorn-price"><%= @unicorn.price %></span>€</strong> /jour</p>
+          </div>
+
+          <div class="booking-card-calendar">
+            <div class="form-wrapper">
+
+              <%= simple_form_for :booking, method: "get" do |f| %>
+                <%= f.input :start_date, required: false, input_html: {id: "start_date"}, label:false %>
+                <%= hidden_field_tag "booking-start" %>
+                <%= f.input :end_date, required: false, input_html: {id: "end_date"}, label:false %>
+                <%= hidden_field_tag "booking-end" %>
+                <%= f.button :submit, "Book now", class: "btn btn-flat" %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="booking-card-price-details">
+
+            <div class="booking-card-price-details-list">
+              <div class="booking-card-price">
+                <p><%= @unicorn.price %>€<span id="booking-duration"> x 1j</span></p>
+                <p><span id="unicorn-total-price"><%= @unicorn.price %>€</span></p>
+              </div>
+
+              <div class="booking-card-price">
+                <p>Frais de service</p>
+                <p><span id="service-fees"><%= "#{(@unicorn.price * 0.05).round(2)}€" %></span></p>
+              </div>
+            </div>
+
+            <div class="booking-card-price-total">
+
+              <div class="booking-card-price">
+                <p><strong>TOTAL</strong></p>
+                <p><span id="booking-total-price"><%= @unicorn.price %>€</span></p>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
-      <div class="booking-card-price-total">
-        <div class="booking-card-price">
-          <p><strong>TOTAL</strong></p>
-          <p><span id="booking-total-price"><%= @unicorn.price %>€</span></p>
-        </div>
-      </div>
 
-    </div>
   </div>
-</div>
-
 </div>

@@ -24,6 +24,8 @@ class UnicornsController < ApplicationController
     end
   end
 
+  private
+
   def params_unicorn
     params.require(:unicorn).permit(:name, :magic_power, :description, :price, :location, photos: [])
   end
