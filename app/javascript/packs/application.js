@@ -26,10 +26,16 @@ require("channels")
 import "bootstrap";
 import "../plugins/flatpickr"
 
+import { fetchCurrentLocation } from '../components/fetch_current_location';
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+const currentLocationLink = document.getElementById('current-location');
+
 
 document.addEventListener('turbolinks:load', () => {
+  currentLocationLink.addEventListener('click', fetchCurrentLocation)
   // Call your functions here, e.g:
   // initSelect2();
 });
+

@@ -1,24 +1,40 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.giphy.com/media/26AHG5KGFxSkUWw1i/giphy.gif); background-size: contain;">
-  <div class="container">
+  <div class="container ">
     <h1>Welcome to <strong>the first unicorn rental app!</strong></h1>
     <p>Change your life and use their superpowers</p>
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-      <div class="search-form-control form-group">
-        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-        <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i> Search
-        </button>
-      </div>
-    <% end %>
+
+    <div class="form d-flex justify-content-center align-items-center">
+      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+        <div class="search-form-control form-group form-inline">
+           <%= button_tag type: 'icon', class: "btn btn-flat left", id: "current-location" do %>
+            <i class="fas fa-map-marker-alt"></i>
+          <% end %>
+          <input class="form-control string required" type="text" name="search[query]" id="location" placeholder="Location" />
+          <input class="form-control string required" type="date" name="search[query]" id="search_query" />
+          <input class="form-control string required" type="time" name="search[query]" id="search_query" />
+          <%= button_tag type: 'submit', class: "btn btn-flat right" do %>
+             Search
+            <i class="fas fa-search" aria-hidden="true"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
-<div class="home-section">
-  <img src="" alt="">
-  <h2>Notre service</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt repellat reiciendis esse, suscipit deleniti, earum modi sequi enim provident inventore.</p>
+
+<div class="service">
+  <img src="https://i.pinimg.com/originals/a4/d6/a2/a4d6a2b2411d46f778fd037f63a99926.jpg" alt="">
+  <div class="text">
+    <h2>Notre service</h2>
+    <p>Nous avons pour vocation de réaliser le rêve de tout un chacun. Nous avons donc réalisé de multiples recherches, études, inventaires et autres choses toutes plus scientifique
+    les unes que le suatres afin de trouver LA chose dont nous rêvons tous. Impossible, me direz-vous ? Eh bien pas avec Unicorn United, le première
+    start-up qui propose une location de licornes créées par les meilleurs propriétaires de la galaxie. Alors si vous aussi vous voulez des pailletes dans votre vie,
+    alors n'hésitez plus une millisecondes et rejoignez-nous !</p>
+  </div>
+
 </div>
-<div class="home-section">
+<!-- <div class="reviews">
   <img src="" alt="">
-  <h2>Notre service</h2>
+  <h2>Nos clients nous recomandent</h2>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt repellat reiciendis esse, suscipit deleniti, earum modi sequi enim provident inventore.</p>
-</div>
+</div> -->
