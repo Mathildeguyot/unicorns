@@ -6,6 +6,7 @@ class UnicornsController < ApplicationController
 
   def show
     @unicorn = Unicorn.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
