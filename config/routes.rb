@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   post '/unicorns', to: 'unicorns#create'
   get '/unicorns/:id', to: 'unicorns#show', as: :unicorn_show
   get '/unicorns/:id', to: "booking#new", as: :new_booking
+  get '/bookings', to: "bookings#index"
 end
