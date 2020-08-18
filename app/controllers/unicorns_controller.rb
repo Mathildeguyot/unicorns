@@ -21,5 +21,5 @@ class UnicornsController < ApplicationController
 
   def set_unicorn
     @unicorn = Unicorn.find(params[:id])
-
+  end
 end
