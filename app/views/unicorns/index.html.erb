@@ -1,1 +1,5 @@
 <h1>All unicorns</h1>
+
+<% if policy(Unicorn).create? %>
+  <%= link_to 'Create a unicorn', new_unicorn_path %>
+<% end %>

@@ -1,6 +1,5 @@
 class UnicornsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-
   def index
     @unicorns = Unicorn.all
   end
@@ -11,6 +10,7 @@ class UnicornsController < ApplicationController
 
   def new
     @unicorn = Unicorn.new
+    authorize @unicorn
   end
 
   def create
