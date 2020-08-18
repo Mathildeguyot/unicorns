@@ -1,7 +1,8 @@
 class UnicornsController < ApplicationController
-
- def show
+  skip_before_action :authenticate_user!, only: [:show, :new, :create]
+  def show
   end
+
   def new
     @unicorn = Unicorn.new
   end
