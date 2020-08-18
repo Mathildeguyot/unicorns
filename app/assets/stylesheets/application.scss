@@ -11,5 +11,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@import "flatpickr/dist/flatpickr";
+@import "flatpickr/dist/themes/light";
+
 @import "pages/new";
 @import "pages/unicorn-show";

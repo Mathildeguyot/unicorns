@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "../plugins/flatpickr"
 
 import { fetchCurrentLocation } from '../components/fetch_current_location';
 
