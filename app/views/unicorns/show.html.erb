@@ -8,8 +8,10 @@
       <div class="form-wrapper">
 
         <%= simple_form_for :booking, method: "get" do |f| %>
-          <%= f.input :start_date, required: false, input_html: {id: "range_start"}, label:false %>
-          <%= f.hidden_field :end_date, required: false, input_html: {id: "range_end"}, label:false %>
+          <%= f.input :start_date, required: false, input_html: {id: "start_date"}, label:false %>
+          <%= hidden_field_tag "booking-start" %>
+          <%= f.input :end_date, required: false, input_html: {id: "end_date"}, label:false %>
+          <%= hidden_field_tag "booking-end" %>
           <%= f.button :submit, "Book now", class: "btn btn-flat" %>
         <% end %>
   </div>
@@ -18,7 +20,7 @@
 
       <div class="booking-card-price-details-list">
         <div class="booking-card-price">
-          <p><%= @unicorn.price %>€ x <%= @booking.start_date %>j</p>
+          <p><%= @unicorn.price %>€ x <p id="booking-duration"></p>j</p>
           <p><%= @unicorn.price %>€</p>
         </div>
         <div class="booking-card-price">
@@ -27,7 +29,10 @@
         </div>
       </div>
       <div class="booking-card-price-total">
-        <%= %>
+        <div class="booking-card-price">
+          <p><strong>TOTAL</strong></p>
+          <p><%=  %>€</p>
+        </div>
       </div>
 
     </div>
