@@ -76,7 +76,7 @@
 <div class="booking-card-container">
   <div class="booking-card">
     <div class="booking-card-price-per-half-day">
-      <p><strong class="price-per-half-day"><%= @unicorn.price %>€</strong>/demi-journée</p>
+      <p><strong class="price-per-half-day"><span id="unicorn-price"><%= @unicorn.price %></span>€</strong>/demi-journée</p>
     </div>
 
     <div class="booking-card-calendar">
@@ -95,18 +95,18 @@
 
       <div class="booking-card-price-details-list">
         <div class="booking-card-price">
-          <p><%= @unicorn.price %>€ x <p id="booking-duration"></p>j</p>
-          <p><%= @unicorn.price %>€</p>
+          <p><%= @unicorn.price %>€<span id="booking-duration"> x 1j</span></p>
+          <p><span id="unicorn-total-price"><%= @unicorn.price %>€</span></p>
         </div>
         <div class="booking-card-price">
           <p>Frais de service</p>
-          <p><%=  %>€</p>
+          <p><span id="service-fees"></span></p>
         </div>
       </div>
       <div class="booking-card-price-total">
         <div class="booking-card-price">
           <p><strong>TOTAL</strong></p>
-          <p><%=  %>€</p>
+          <p><span id="booking-total-price"><%= @unicorn.price %>€</span></p>
         </div>
       </div>
 
