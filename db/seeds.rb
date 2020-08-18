@@ -28,6 +28,8 @@ UNICORN_PICTURES = [
   {url: "https://res.cloudinary.com/dfrtup7hb/image/upload/v1597674680/licorne7_makql8.jpg",name: "licorne7_makql8.jpg"},
   {url: "https://res.cloudinary.com/dfrtup7hb/image/upload/v1597674680/licorne11_mastst.jpg",name: "licorne11_mastst.jpg"},
   {url: "https://res.cloudinary.com/dfrtup7hb/image/upload/v1597674680/licorne6_we54js.jpg",name: "licorne6_we54js.jpg"},
+  {url: "https://res.cloudinary.com/dfrtup7hb/image/upload/v1597674680/licorne6_we54js.jpg",name: "licorne6_we54js.jpg"},
+  {url: "https://res.cloudinary.com/dfrtup7hb/image/upload/v1597674680/licorne6_we54js.jpg",name: "licorne6_we54js.jpg"},
   {url: "https://res.cloudinary.com/dfrtup7hb/image/upload/v1597674679/licorne2_vwc2ut.jpg",name: "licorne2_vwc2ut.jpg"},
   {url: "https://res.cloudinary.com/dfrtup7hb/image/upload/v1597674679/licorne1_o0vj9c.jpg" ,name: "licorne1_o0vj9c.jpg"},
   {url: "https://res.cloudinary.com/dfrtup7hb/image/upload/v1597674679/licorne5_izdkpv.jpg",name: "licorne5_izdkpv.jpg"},
@@ -61,6 +63,7 @@ count = 0
   )
   unicorn.save
   unicorn.photos.attach(io: URI.open(UNICORN_PICTURES[count][:url]), filename: UNICORN_PICTURES[count][:name])
+  unicorn.photos.attach(io: URI.open(UNICORN_PICTURES[count + 1][:url]), filename: UNICORN_PICTURES[count + 1][:name])
   count += 1
 end
 

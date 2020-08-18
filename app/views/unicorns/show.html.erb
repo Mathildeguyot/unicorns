@@ -1,27 +1,78 @@
-<div>
-  <h1><%= @unicorn.name %></h1>
-  <% sum = 0 %>
-  <% count = 0 %>
-  <% @unicorn.bookings.each do |booking| %>
-    <% sum += booking.rating %>
-    <% count += 1 %>
-  <% end %>
-  <% average = sum / count %>
-  <%= average.times do %>
-    <i class="fas fa-star"></i>
-  <% end %>
-  <%= (5 - average).times do %>
-    <i class="far fa-star"></i>
-  <% end %>
-</div>
-<div>
+<div class="container">
+
+
+  <div class="title">
+    <h1><%= @unicorn.name %> -</h1>
+    <div class="rating">
+      <% sum = 0 %>
+      <% count = 0 %>
+      <% if @unicorn.bookings.count == 0 %>
+        <% 5.times do %>
+          <i class="far fa-star"></i>
+        <% end %>
+      <% else %>
+        <% @unicorn.bookings.each do |booking| %>
+          <% sum += booking.rating %>
+          <% count += 1 %>
+        <% end %>
+        <% average = sum / count %>
+        <% average.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+        <% (5 - average).times do %>
+          <i class="far fa-star"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
   <h2>by <%= @unicorn.user.pseudo %></h2>
-  <% @unicorn.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-  <h2>✨ <%= @unicorn.magic_power %></h2>
+
+
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <% active = true %>
+      <% @unicorn.photos.each do |photo| %>
+        <div class="carousel-item <%= 'active' if active %>">
+          <%= cl_image_tag photo.key, crop: :fill, class: "d-block w-100", alt: "..." %>
+        </div>
+        <% active = false %>
+      <% end %>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+
   <h3><%= @unicorn.price %>€ / jour</h3>
-  <p><%= @unicorn.description %></p>
+
+
+  <div class="content">
+    <h2>✨ <%= @unicorn.magic_power %></h2>
+    <p><%= @unicorn.description %></p>
+  </div>
+
+
+  <div class="avis">
+    <h2>Avis</h2>
+    <% @unicorn.bookings.each do |booking| %>
+      <% (booking.rating).times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - booking.rating).times do %>
+        <i class="far fa-star"></i>
+      <% end %>
+      <p><%= booking.review %></p>
+    <% end %>
+  </div>
+
 </div>
 
 
