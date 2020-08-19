@@ -6,15 +6,35 @@
     <%= link_to 'Create a unicorn', new_unicorn_path %>
   <% end %> -->
 
-  <% @unicorns.each do |unicorn| %>
-    <% unicorn.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="cards-grid">
+    <% @unicorns.each do |unicorn| %>
+      <div class="unicorn-index-card">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <% active = true %>
+            <% unicorn.photos.each do |photo| %>
+              <div class="carousel-item <%= 'active' if active %>">
+                <%= cl_image_tag photo.key, crop: :fill, class: "d-block w-100", alt: "..." %>
+              </div>
+              <% active = false %>
+            <% end %>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+        <div class="card-text">
+          <h2><%= unicorn.name %></h2>
+          <p><%= unicorn.location %></p>
+          <%= link_to "Voir les détails", unicorn_path(unicorn)  %>
+        </div>
+      </div>
     <% end %>
-    <%= unicorn.name %>
-    <%= unicorn.location %>
-    <%= link_to "Voir les détails", unicorn_path(unicorn)  %>
-  <% end %>
-
-
+  </div>
 
 </div>
