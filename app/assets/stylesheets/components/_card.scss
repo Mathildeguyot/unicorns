@@ -5,6 +5,7 @@
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
   margin: 48px 24px;
   max-width: 400px;
+  background-color: $light-gray;
 }
 
 .booking-card {
@@ -52,11 +53,18 @@
    }
   }
 
-  .booking-card-price-total {
-    margin-top: 16px;
-    border-top: 1px solid rgba(0,0,0,0.2);
-    p {
-      margin-top: 24px;
-      font-size: 20px;
-    }
+.booking-card-price-total {
+  margin-top: 16px;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  p {
+    margin-top: 24px;
+    font-size: 20px;
   }
+}
+
+// Fixing booking card when scrolling -> NOK
+// .scroll {
+//   position: fixed;
+//   top: 0px;
+//   right: 250px;
+// }

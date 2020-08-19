@@ -29,9 +29,9 @@ flatpickr("#start_date", {
     end_date.set('minDate',dateStr)
   },
   onClose: function(selectedDates, dateStr, instance) {
-    startDate.value = dateStr;
+    startDate.value = selectedDates;
   },
-  dateFormat: "Y-m-d",
+  dateFormat: "F j, Y",
   minDate: "today"
 })
 
@@ -47,7 +47,7 @@ const end_date = flatpickr("#end_date", {
     bookingTotalPrice.innerText = `${(parseFloat(unicornTotalPrice.innerText) +parseFloat(serviceFees.innerText)).toFixed(2)}€`;
 
   },
-  dateFormat: "Y-m-d",
+  dateFormat: "F j, Y",
 });
 
 
