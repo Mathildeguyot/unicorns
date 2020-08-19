@@ -1,0 +1,31 @@
+.principal-container {
+  margin-left: 50px;
+  h1 {
+    background: linear-gradient(to right, #dfaff6, #ffadda, #ffb5bc, #ffc4a6, #ffd6a0, #f7e0a1, #edeba6, #e0f5af, #cbf7bb, #b8f7ca, #a9f6d8, #9ff4e6);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
+
+.container-card {
+  display: flex;
+  margin-left:0;
+  padding-left: 0
+}
+
+.card {
+  margin-right: 10px;
+  margin-bottom: 50px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+}
+
+.card-header {
+  background-color:$light-blue;
+  color:black;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  .fa-trash-alt {
+    color:black
+  }
+}
