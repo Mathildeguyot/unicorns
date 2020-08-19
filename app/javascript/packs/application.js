@@ -43,7 +43,7 @@ const currentLocationLink = document.getElementById('current-location');
 
 
 document.addEventListener('turbolinks:load', () => {
-  currentLocationLink.addEventListener('click', fetchCurrentLocation)
+  // currentLocationLink.addEventListener('click', fetchCurrentLocation)
   // Call your functions here, e.g:
   // initSelect2();
 });
