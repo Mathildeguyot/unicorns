@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :destroy]
 
   def index
-    @bookings = Booking.all(params_booking.merge(user: current_user))
+    @bookings = Booking.where(user: current_user)
   end
 
   def create
@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.unicorn = @unicorn
 
     if @booking.save
-      redirect_to bookings_path
+      redirect_to booking_path(@booking)
     else
       render :new
     end
@@ -20,7 +20,8 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @unicorn = @booking.unicorn
+    # pundit sauf si booking.user = current_user
+    # @unicorn = @booking.unicorn
 
     # /!\ checker format start_date & end_date
     # créer une fondtion total_days dans model booking ?
