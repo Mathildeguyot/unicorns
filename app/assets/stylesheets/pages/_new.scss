@@ -3,7 +3,7 @@
   color:#a56cc1;
 }
 
-.container-one h1 {
+.container-one #title-page {
   font-family: 'Amaranth', sans-serif;
   font-weight: 400;
   margin: 30px 0 30px 50px;
@@ -19,19 +19,24 @@ body {
 .container-second {
   display: flex;
   flex-direction:row-reverse;
-  justify-content: space-between;
-  align-items: center;
-  margin:30px 50px 20px 50px;
+      justify-content: space-between;
+  margin:0 50px 20px 0px;
+}
+
+.container-form {
+  margin: 0 0 0 50px;
+  padding: 20px;
+  background-color:#EBFFF9;
 }
 
 .photo-right {
   margin-bottom: 70px;
-  margin:20px 50px 20px 50px;
+  margin: 20px 10px 20px 50px;
+
 }
 .photo-right img {
   margin-bottom: 70px;
 }
-
 
 #unicorn_name, #unicorn_magic_power, #unicorn_description, #unicorn_price, #unicorn_location, .btn-primary {
   border-radius: 10px;
@@ -41,10 +46,21 @@ body {
   display:block;
 }
 
+#unicorn_description {
+  resize: none;
+  height: 70px;
+}
+
+
 .btn-primary {
   background: linear-gradient(to right, #dfaff6, #ffadda, #ffb5bc, #ffc4a6, #ffd6a0, #f7e0a1, #edeba6, #e0f5af, #cbf7bb, #b8f7ca, #a9f6d8, #9ff4e6);
   color:#a56cc1;
-  border-color:white;
+  border-color:#EBFFF9;
+}
+
+.form-check {
+  display: inline;
+    padding-right: 10px;
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -53,7 +69,7 @@ body {
     width:250px;
   }
 .photo-right {
-  margin-left: 50px;
+  display: none;
 }
 }
 
@@ -70,9 +86,9 @@ body {
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .image_unicorn {
-    width:420px;
+    width:500px;
   }
   .photo-right img {
-  margin-right: 150px;
+  // margin-right: 150px;
 }
 }
