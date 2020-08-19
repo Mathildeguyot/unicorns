@@ -11,7 +11,7 @@ const bookingTotalPrice= document.querySelector("#booking-total-price");
 
 const days_between=(date1, date2) => {
   // The number of milliseconds in one day
-    const ONE_DAY = 1000 * 60 * 60 * 24
+    const oneDay = 1000 * 60 * 60 * 24
 
     // Convert both dates to milliseconds
     const date1_ms = date1.getTime();
@@ -21,7 +21,7 @@ const days_between=(date1, date2) => {
     const difference_ms = Math.abs(date1_ms - date2_ms)
 
     // Convert back to days and return
-    return Math.round(difference_ms/ONE_DAY)
+    return Math.round(difference_ms/oneDay)
 };
 
 flatpickr("#start_date", {
@@ -49,5 +49,6 @@ const end_date = flatpickr("#end_date", {
   },
   dateFormat: "F j, Y",
 });
+
 
 
