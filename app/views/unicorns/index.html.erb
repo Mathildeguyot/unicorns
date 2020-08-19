@@ -1,23 +1,35 @@
-<div class="container">
 
-  <h1>Toutes les licornes</h1>
+  <div class="index">
 
-<!--   <% if policy(Unicorn).create? %>
-    <%= link_to 'Create a unicorn', new_unicorn_path %>
-  <% end %> -->
+    <div class="left-index">
+      <h1>Toutes les licornes</h1>
+
+    <!--   <% if policy(Unicorn).create? %>
+        <%= link_to 'Create a unicorn', new_unicorn_path %>
+      <% end %> -->
 
 
-  <% @unicorns.each do |unicorn| %>
-    <div class="unicorn-index-card">
-      <% unicorn.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
+      <% @unicorns.each do |unicorn| %>
+        <div class="unicorn-index-card">
+          <% unicorn.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
+          <% end %>
+          <div class="card-text">
+            <h2><%= unicorn.name %></h2>
+            <p><%= unicorn.location %></p>
+            <%= link_to "Voir les détails", unicorn_path(unicorn)  %>
+          </div>
+        </div>
       <% end %>
-      <div class="card-text">
-        <h2><%= unicorn.name %></h2>
-        <p><%= unicorn.location %></p>
-        <%= link_to "Voir les détails", unicorn_path(unicorn)  %>
-      </div>
-    </div>
-  <% end %>
 
-</div>
+
+    </div>
+    <div id="map"
+       style="width: 50%; height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+  </div>
+
+

@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import "../plugins/flatpickr"
+import { initMapbox } from '../plugins/init_mapbox';
 
 import { fetchCurrentLocation } from '../components/fetch_current_location';
 import { bookUnicorn } from '../components/fetch_current_location';
@@ -39,10 +40,12 @@ import { initFixBookingCardOnScroll } from '../components/booking-card';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-const currentLocationLink = document.getElementById('current-location');
+
 
 
 document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+  fetchCurrentLocation();
   // currentLocationLink.addEventListener('click', fetchCurrentLocation)
   // Call your functions here, e.g:
   // initSelect2();
