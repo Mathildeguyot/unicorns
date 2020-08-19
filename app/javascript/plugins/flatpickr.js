@@ -21,7 +21,7 @@ const days_between=(date1, date2) => {
     const difference_ms = Math.abs(date1_ms - date2_ms)
 
     // Convert back to days and return
-    return Math.round(difference_ms/oneDay)
+    return Math.round(difference_ms/oneDay + 1)
 };
 
 flatpickr("#start_date", {
