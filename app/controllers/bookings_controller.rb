@@ -31,8 +31,6 @@ class BookingsController < ApplicationController
     # @booking_price = @booking.unicorn.price * @total_days + @booking.unicorn.price * @total_days * 0.05
   end
 
-  end
-
   def destroy
     @booking.destroy
     redirect_to bookings_path
