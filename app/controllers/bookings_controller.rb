@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(params_booking)
+    raise
     @booking.user = current_user
     @booking.unicorn = Unicorn.find(params[:id])
 
