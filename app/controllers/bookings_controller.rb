@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :destroy]
 
   def index
-    @bookings = Booking.all(params_booking.merge(user: current_user))
+    @bookings = Booking.where(user: current_user)
   end
 
   def create
@@ -44,7 +44,7 @@ class BookingsController < ApplicationController
   end
 
   def set_unicorn
-    @unicorn = Flat.find(params[:unicorn_id])
+    @unicorn = Unicorn.find(params[:unicorn_id])
   end
 
   def set_booking
