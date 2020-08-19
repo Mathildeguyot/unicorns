@@ -1,2 +1,9 @@
-<h1>My bookings</h1>
+<h1>my bookings</h1>
 
+<% @bookings.each do |booking| %>
+<%= booking.start_date %>
+<%= booking.end_date %>
+<%= booking.unicorn.name %>
+<%= booking.unicorn.magic_power %>
+<%= booking.description %>
+<% end %>
