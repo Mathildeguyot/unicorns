@@ -26,6 +26,11 @@
   justify-content:space-between;
   align-items: center;
   .fa-trash-alt {
-    color:black
+    color:black !important;
+    text-decoration: none;
+  }
+  .fa-eye {
+    color:black;
+    text-decoration: none;
   }
 }
