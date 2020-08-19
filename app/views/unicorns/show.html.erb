@@ -99,13 +99,14 @@
           <div class="booking-card-calendar">
             <div class="form-wrapper">
 
-              <%= simple_form_for :booking, method: "get" do |f| %>
-                <%= f.input :start_date, required: false, input_html: {id: "start_date"}, label:false %>
+              <%= simple_form_for [@unicorn, @booking] do |f| %>
+                <%= f.input :start_date, required: false, label:false, as: :string, input_html: {id: 'start_date'} %>
                 <%= hidden_field_tag "booking-start" %>
-                <%= f.input :end_date, required: false, input_html: {id: "end_date"}, label:false %>
+                <%= f.input :end_date, required: false, label:false, as: :string, input_html: {id: 'end_date'} %>
                 <%= hidden_field_tag "booking-end" %>
                 <%= f.button :submit, "Book now", class: "btn btn-flat" %>
               <% end %>
+
             </div>
           </div>
 
