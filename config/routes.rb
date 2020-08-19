@@ -4,11 +4,9 @@ Rails.application.routes.draw do
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   end
   root to: 'pages#home'
-  
-  get '/unicorns', to: "unicorns#index"
-  get '/unicorns/new', to: 'unicorns#new', as: :new_unicorn
-  post '/unicorns', to: 'unicorns#create'
-  get '/unicorns/:id', to: 'unicorns#show', as: :unicorn_show
-  get '/unicorns/:id', to: "booking#new", as: :new_booking
-  get '/bookings', to: "bookings#index"
+
+  resources :bookings, only: [:index, :show, :destroy]
+  resources :unicorns do
+    resources :bookings, only: [:new, :create]
+  end
 end

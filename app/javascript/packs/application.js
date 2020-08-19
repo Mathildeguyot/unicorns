@@ -27,6 +27,15 @@ import "bootstrap";
 import "../plugins/flatpickr"
 
 import { fetchCurrentLocation } from '../components/fetch_current_location';
+import { bookUnicorn } from '../components/fetch_current_location';
+
+import { initFixBookingCardOnScroll } from '../components/booking-card';
+
+// Fixing booking card when scrolling
+// initFixBookingCardOnScroll();
+
+// TBD
+// bookUnicorn();
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
