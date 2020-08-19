@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
 
   def show
     # pundit sauf si booking.user = current_user
-    # @unicorn = @booking.unicorn
+    @unicorn = @booking.unicorn
 
     # /!\ checker format start_date & end_date
     # créer une fondtion total_days dans model booking ?
