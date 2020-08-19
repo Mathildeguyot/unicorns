@@ -10,7 +10,7 @@
 .search-form-control .btn-flat {
   color: black;
   padding: 15px 24px;
-  background: $pink;
+  background: #ace7ef;
 }
 
 .search-form-control .btn-flat:hover {
@@ -19,17 +19,21 @@
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   background: linear-gradient(75deg, $pink, $light-blue);
-
+  color:black
 }
 
 .btn-flat.left {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+      border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .btn-flat.right {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
