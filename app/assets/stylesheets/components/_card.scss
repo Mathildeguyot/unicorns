@@ -96,6 +96,7 @@
     }
   }
 }
+
 .booking-show-card {
 
   .booking-infos {
@@ -116,6 +117,9 @@
     margin-top: 16px;
     p {
       color: rgba(0,0,0,0.5);
+    }
+  }
+}
 
 .unicorn-index-card {
   display: flex;
@@ -159,10 +163,3 @@
   display: table-cell;
   width: 50%;
 }
-
-// Fixing booking card when scrolling -> NOK
-// .scroll {
-//   position: fixed;
-//   top: 0px;
-//   right: 250px;
-// }
