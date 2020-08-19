@@ -1,5 +1,20 @@
-<h1>All unicorns</h1>
+<div class="container">
 
-<% if policy(Unicorn).create? %>
-  <%= link_to 'Create a unicorn', new_unicorn_path %>
-<% end %>
+  <h1>Toutes les licornes</h1>
+
+<!--   <% if policy(Unicorn).create? %>
+    <%= link_to 'Create a unicorn', new_unicorn_path %>
+  <% end %> -->
+
+  <% @unicorns.each do |unicorn| %>
+    <% unicorn.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+    <%= unicorn.name %>
+    <%= unicorn.location %>
+    <%= link_to "Voir les détails", unicorn_path(unicorn)  %>
+  <% end %>
+
+
+
+</div>
