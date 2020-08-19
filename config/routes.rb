@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
   root to: 'pages#home'
 
-  resources :bookinks, only: [:index, :show, :destroy]
+  resources :bookings, only: [:index, :show, :destroy]
   resources :unicorns do
     resources :bookings, only: [:new, :create]
   end

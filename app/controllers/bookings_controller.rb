@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :destroy]
 
   def index
-    @bookings = current_user.bookings.all
+    @bookings = Booking.all(params_booking.merge(user: current_user))
   end
 
   def create
