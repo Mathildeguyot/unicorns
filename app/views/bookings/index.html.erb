@@ -1,9 +1,17 @@
-<h1>my bookings</h1>
-
-<% @bookings.each do |booking| %>
-<%= booking.start_date %>
-<%= booking.end_date %>
-<%= booking.unicorn.name %>
-<%= booking.unicorn.magic_power %>
-<%= booking.description %>
-<% end %>
+<div class="principal-container">
+  <h1>My bookings</h1>
+  <div class="container-card">
+    <% @bookings.each do |booking| %>
+      <div class="card" style="width: 18rem;">
+        <div class="card-header">
+          <%= booking.unicorn.name %><%= link_to "", booking_path(booking), :class => "far fa-trash-alt", method: :delete, data: { confirm: "Are you sure?" }  %>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= booking.start_date %> ➡ <%= booking.end_date %></li>
+          <li class="list-group-item"><%= booking.unicorn.magic_power %></li>
+          <li class="list-group-item"><%= booking.unicorn.description %></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>
