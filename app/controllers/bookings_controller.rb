@@ -7,14 +7,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    raise
     @booking = Booking.new(params_booking.merge(user: current_user))
     @booking.unicorn = @unicorn
 
     if @booking.save
       redirect_to booking_path(@booking)
     else
-      render :new
+      render "unicorns/show"
     end
 
   end
@@ -40,12 +39,12 @@ class BookingsController < ApplicationController
 
   private
 
-  def params_unicorn
+  def params_booking
     params.require(:booking).permit(:start_date, :end_date)
   end
 
   def set_unicorn
-    @unicorn = Flat.find(params[:unicorn_id])
+    @unicorn = Unicorn.find(params[:unicorn_id])
   end
 
   def set_booking
