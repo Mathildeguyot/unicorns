@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.unicorn = @unicorn
 
     if @booking.save
-      redirect_to root_path
+      redirect_to booking_path(@booking)
     else
       render "unicorns/show"
     end
@@ -19,7 +19,8 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @unicorn = @booking.unicorn
+    # pundit sauf si booking.user = current_user
+    # @unicorn = @booking.unicorn
 
     # /!\ checker format start_date & end_date
     # créer une fondtion total_days dans model booking ?
