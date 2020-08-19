@@ -36,11 +36,11 @@
 
 
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
+        <div class="carousel-inner" style="border-radius: 10px">
           <% active = true %>
           <% @unicorn.photos.each do |photo| %>
             <div class="carousel-item <%= 'active' if active %>">
-              <%= cl_image_tag photo.key, crop: :fill, class: "d-block w-100", alt: "..." %>
+              <%= cl_image_tag photo.key, crop: :fit, class: "d-block w-100", alt: "..." %>
             </div>
             <% active = false %>
           <% end %>

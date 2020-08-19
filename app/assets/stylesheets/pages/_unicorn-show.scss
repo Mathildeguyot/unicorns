@@ -13,6 +13,9 @@
     margin: 0px 13px;
     font-size: 22px;
     margin-top: 25px;
+    background: linear-gradient(to right, #9ff4e6, #a9f6d8, #b8f7ca, #cbf7bb, #e0f5af, #edeba6, #f7e0a1, #ffd6a0, #ffc4a6, #ffb5bc, #ffadda, #dfaff6);
+    -webkit-background-clip: text;
+    color: transparent;
   }
 }
 
@@ -40,6 +43,10 @@ h2 {
   width: 700px;
   height:400px;
   margin-bottom: 15px;
+  img {
+    height: 400px;
+    object-fit: cover;
+  }
 }
 
 .avis {
