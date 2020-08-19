@@ -62,6 +62,23 @@
   }
 }
 
+.unicorn-index-card {
+  display: flex;
+  box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  width: 550px;
+  align-items: center;
+  .card-text {
+    margin-left: 15px;
+    h2 {
+      margin-bottom: 5px;
+    }
+    p {
+      margin-bottom: 5px;
+    }
+  }
+}
+
 // Fixing booking card when scrolling -> NOK
 // .scroll {
 //   position: fixed;
