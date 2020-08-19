@@ -1,7 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: $light-blue;
+  background: #cefff1;
   height: 65px;
+  position: relative;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,11 +14,20 @@
 }
 
 .navbar h1 {
-  color: $pink;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  color: #a6acec;
+  text-shadow: 1px 1px 3px white;
   font-family: $headers-font;
 }
 
 .nav-link {
   font-family: $headers-font !important;
 }
+
+@media (min-width: 1000px) {
+  .navbar h1 {
+  position: absolute;
+  left: 45%;
+  right: 50%;
+  }
+}
+
