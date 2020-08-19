@@ -2,6 +2,7 @@
   justify-content: space-between;
   background: $light-blue;
   height: 65px;
+  position: relative;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -21,3 +22,12 @@
 .nav-link {
   font-family: $headers-font !important;
 }
+
+@media (min-width: 1000px) {
+  .navbar h1 {
+  position: absolute;
+  left: 45%;
+  right: 50%;
+  }
+}
+

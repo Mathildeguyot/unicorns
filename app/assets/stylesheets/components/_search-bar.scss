@@ -1,7 +1,3 @@
-.search-form-control {
-  position: relative;
-
-}
 
 
 .search-form-control .form-control {
@@ -34,4 +30,32 @@
 .btn-flat.right {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .form-inline {
+    flex-flow: nowrap;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 576px) {
+  .form-inline {
+    flex-flow: nowrap;
+  }
+  .form-control.string.required.time {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+    .form-inline {
+    flex-flow: nowrap;
+  }
+    .form-control.string.required.date {
+    display: none;
+
+  }
+    .form-control.string.required.time {
+    display: none;
+  }
 }
