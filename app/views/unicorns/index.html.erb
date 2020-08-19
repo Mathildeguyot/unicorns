@@ -6,15 +6,18 @@
     <%= link_to 'Create a unicorn', new_unicorn_path %>
   <% end %> -->
 
+
   <% @unicorns.each do |unicorn| %>
-    <% unicorn.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-    <%= unicorn.name %>
-    <%= unicorn.location %>
-    <%= link_to "Voir les détails", unicorn_path(unicorn)  %>
+    <div class="unicorn-index-card">
+      <% unicorn.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
+      <% end %>
+      <div class="card-text">
+        <h2><%= unicorn.name %></h2>
+        <p><%= unicorn.location %></p>
+        <%= link_to "Voir les détails", unicorn_path(unicorn)  %>
+      </div>
+    </div>
   <% end %>
-
-
 
 </div>
