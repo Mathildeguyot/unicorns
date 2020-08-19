@@ -9,18 +9,22 @@
         <div class="rating">
           <% sum = 0 %>
           <% count = 0 %>
-          <% if @unicorn.bookings.count == 0 %>
+          <% if @unicorn.bookings.size == 0 %>
             <% 5.times do %>
               <i class="far fa-star"></i>
             <% end %>
+            <% count = count + 1 %>
           <% else %>
             <% @unicorn.bookings.each do |booking| %>
               <% if booking.rating != nil %>
                 <% sum += booking.rating %>
                 <% count += 1 %>
+              <% else %>
+                <% sum = 1 %>
+                <% count += 1 %>
               <% end %>
             <% end %>
-            <% average = sum / count %>
+            <% average = sum / @unicorn.bookings.size %>
             <% average.times do %>
               <i class="fas fa-star"></i>
             <% end %>
@@ -31,9 +35,12 @@
         </div>
       </div>
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> f3dd9fb69305362cb04235210785a156ebe2d4a7
       <h2>by <%= @unicorn.user.pseudo %></h2>
 
 
