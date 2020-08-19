@@ -15,8 +15,10 @@
             <% end %>
           <% else %>
             <% @unicorn.bookings.each do |booking| %>
-              <% sum += booking.rating %>
-              <% count += 1 %>
+              <% if booking.rating != nil %>
+                <% sum += booking.rating %>
+                <% count += 1 %>
+              <% end %>
             <% end %>
             <% average = sum / count %>
             <% average.times do %>
@@ -66,12 +68,20 @@
       <div class="avis">
         <h2>Avis</h2>
         <% @unicorn.bookings.each do |booking| %>
-          <% (booking.rating).times do %>
-            <i class="fas fa-star"></i>
+
+          <% if booking.rating != nil %>
+            <% (booking.rating).times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 - booking.rating).times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+          <% else %>
+            <% 5.times do %>
+              <i class="far fa-star"></i>
+            <% end %>
           <% end %>
-          <% (5 - booking.rating).times do %>
-            <i class="far fa-star"></i>
-          <% end %>
+
           <p><%= booking.review %></p>
         <% end %>
       </div>
@@ -125,6 +135,6 @@
           </div>
         </div>
       </div>
-  
+
     </div>
   </div>
