@@ -8,6 +8,9 @@
   margin-top: 25px;
   h1 {
     margin: 15px 0px;
+    background: linear-gradient(to right, #dfaff6, #ffadda, #ffb5bc, #ffc4a6, #ffd6a0, #f7e0a1, #edeba6, #e0f5af, #cbf7bb, #b8f7ca, #a9f6d8, #9ff4e6);
+    -webkit-background-clip: text;
+    color: transparent;
   }
   .rating {
     margin: 0px 13px;
