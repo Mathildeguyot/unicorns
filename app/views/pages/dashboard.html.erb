@@ -3,22 +3,18 @@
 
   <div class="dash">
     <div id="inline">
-      <h2>Voici vos licornes actuellement sur  <div id="title-unico"> UNICO</div></h2>
+      <h2>Voici vos licornes actuellement sur <mark class="title-unico">UNICO</mark></h2>
     </div>
+     <% @my_unicorns.each do |unicorn|%>
     <ul class="list-group list-group-horizontal">
-      <% @my_unicorns.each do |unicorn|%>
-      <li class="list-group-item flex-fill"><%= unicorn.name %></li>
-      <li class="list-group-item flex-fill"><%= unicorn.magic_power %></li>
-      <li class="list-group-item flex-fill"><%= unicorn.price %></li>
-        <div class="dropdown show">
-          <a class="btn btn-primary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">...</a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#"><i class="fas fa-pencil-alt"></i></a>
-            <a class="dropdown-item" href="#"><i class="far fa-trash-alt"></i></a>
-          </div>
+        <li class="list-group-item flex-fill"><%= unicorn.name %></li>
+        <li class="list-group-item flex-fill"><%= unicorn.magic_power %></li>
+        <li class="list-group-item flex-fill"><%= unicorn.price %></li>
+        <div class="icon-delete-edit">
+          <li class="list-group-item flex-fill"><%= link_to "", unicorn_path(unicorn), :class => "fas fa-pencil-alt"%>  <%= link_to "", unicorn_path(unicorn), :class => "far fa-trash-alt", method: :delete, data: { confirm: "Are you sure?" }  %></li>
         </div>
-      <% end %>
     </ul>
+    <% end %>
   </div>
 </div>
 
