@@ -9,7 +9,8 @@ class UnicornsController < ApplicationController
         lat: unicorn.latitude,
         lng: unicorn.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { unicorn: unicorn }),
-        image_url: helpers.asset_url('mascotte.png')
+        image_url: helpers.asset_url('mascotte.png'),
+        id: unicorn.id
       }
     end
   end

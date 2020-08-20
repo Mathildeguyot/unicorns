@@ -4,7 +4,7 @@ class Unicorn < ApplicationRecord
 
   has_many_attached :photos
 
-  MAGIC_POWERS = ["flying", "healing", "garden blooming", "yogi master", "fortune-telling"]
+  MAGIC_POWERS = ["ailé", "guérisseuse", "horticultrice", "yogi", "voyante"]
 
   validates :name, presence: true
   validates :magic_power, presence: true, inclusion: { in: MAGIC_POWERS,

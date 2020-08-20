@@ -14,7 +14,7 @@ Booking.destroy_all
 
 CITIES = %w( Paris Lyon Montpellier Toulouse Marseille Lille Strasbourg Bordeaux )
 
-MAGIC_POWERS = ["flying", "healing", "garden blooming", "yogi master", "fortune-telling"]
+MAGIC_POWERS = ["ailé", "guérisseuse", "horticultrice", "yogi", "voyante"]
 
 UNICORN_PICTURES = [
   {url: "https://res.cloudinary.com/dfrtup7hb/image/upload/v1597674680/licorne18_cocwmu.jpg", name: "licorne18_cocwmu.jpg"},
