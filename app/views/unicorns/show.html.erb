@@ -9,18 +9,22 @@
         <div class="rating">
           <% sum = 0 %>
           <% count = 0 %>
-          <% if @unicorn.bookings.count == 0 %>
+          <% if @unicorn.bookings.size == 0 %>
             <% 5.times do %>
               <i class="far fa-star"></i>
             <% end %>
+            <% count = count + 1 %>
           <% else %>
             <% @unicorn.bookings.each do |booking| %>
               <% if booking.rating != nil %>
                 <% sum += booking.rating %>
                 <% count += 1 %>
+              <% else %>
+                <% sum = 1 %>
+                <% count += 1 %>
               <% end %>
             <% end %>
-            <% average = sum / count %>
+            <% average = sum / @unicorn.bookings.size %>
             <% average.times do %>
               <i class="fas fa-star"></i>
             <% end %>
@@ -31,16 +35,15 @@
         </div>
       </div>
 
-
       <h2>by <%= @unicorn.user.pseudo %></h2>
 
 
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
+        <div class="carousel-inner" style="border-radius: 10px">
           <% active = true %>
           <% @unicorn.photos.each do |photo| %>
             <div class="carousel-item <%= 'active' if active %>">
-              <%= cl_image_tag photo.key, crop: :fill, class: "d-block w-100", alt: "..." %>
+              <%= cl_image_tag photo.key, crop: :fit, class: "d-block w-100", alt: "..." %>
             </div>
             <% active = false %>
           <% end %>
@@ -54,7 +57,6 @@
           </a>
         </div>
       </div>
-
 
       <h3><%= @unicorn.price %>€ /jour</h3>
 
@@ -104,7 +106,7 @@
                 <%= hidden_field_tag "booking-start" %>
                 <%= f.input :end_date, required: false, label:false, as: :string, input_html: {id: 'end_date'} %>
                 <%= hidden_field_tag "booking-end" %>
-                <%= f.button :submit, "Book now", class: "btn btn-flat" %>
+                <%= f.button :submit, "Réserver ma licorne", class: "btn btn-flat" %>
               <% end %>
 
             </div>

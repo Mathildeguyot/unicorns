@@ -8,9 +8,9 @@
   color: rgba(0,0,0,0.3);
   background: linear-gradient(75deg, $pink, $light-blue);
   flex-direction: column;
-  #logo-small {
-    width: 70px;
-  }
+    #logo-small {
+      width: 70px;
+    }
 }
 .footer-links {
   display: flex;
@@ -35,3 +35,4 @@
 .footer-links a:hover {
   opacity: 1;
 }
+
