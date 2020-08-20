@@ -12,7 +12,6 @@ User.destroy_all
 Unicorn.destroy_all
 Booking.destroy_all
 
-CITIES = %w( Paris Lyon Montpellier Toulouse Marseille Lille Strasbourg Bordeaux )
 
 MAGIC_POWERS = ["ailé", "guérisseuse", "horticultrice", "yogi", "voyante"]
 
@@ -38,6 +37,29 @@ UNICORN_PICTURES = [
   {url: "https://res.cloudinary.com/dfrtup7hb/image/upload/v1597674679/15_iayhct.jpg",name: "15_iayhct.jpg"}
 ]
 
+CITIES = [
+  "56 Avenue Jules Ferry, 02200 Soissons Picardie",
+  "83 Avenue Millies Lacroix 59640 Dunkerque",
+  "65  Square de la Couronne PALAISEAU Île-de-France",
+  "99, rue des Dunes 35400 SAINT-MALO",
+  "74  place Maurice-Charretier CHARENTON-LE-PONT Île-de-France",
+  "106  rue Beauvau MARSEILLE Provence-Alpes-Côte d'azur",
+  "10  place Maurice-Charretier CHARLEVILLE-MÉZIÈRES Champagne-Ardenne",
+  "15 rue la Boétie Paris Île-de-France",
+  "24  avenue du Marechal Juin SAINT-LÔ Basse-normandie",
+  "67  rue Charles Corbeau ÉVREUX Haute-Normandie",
+  "90  rue Goya LE PERREUX-SUR-MARNE Île-de-France",
+  "86  avenue de Provence VANNES Bretagne",
+  "128  avenue Voltaire MAISONS-ALFORT Île-de-France",
+  "89 Avenue de provence VALLAURIS Provence-Alpes-Côte d'azur",
+  "119  Rue Hubert de Lisle LUNEL Languedoc-Roussillon",
+  "132  Rue de Strasbourg CLICHY Île-de-France",
+  "75  rue du Général Ailleret LES LILAS Île-de-France",
+  "88  place de Miremont VILLENEUVE-SUR-LOT Aquitaine",
+  "65  boulevard Bryas CREIL Picardie",
+  "73  Boulevard de Normandie FORT-DE-FRANCE Martinique"
+]
+
 10.times do
   user_name = Faker::Name.first_name
   user = User.new(
@@ -57,7 +79,7 @@ count = 0
     name: unicorn_names.sample,
     magic_power: MAGIC_POWERS.sample,
     description: Faker::Lorem.paragraph(sentence_count: rand(2..6)),
-    location: CITIES.sample,
+    location: CITIES[count],
     price: rand(350.0..1050.0).round(2),
     user: User.all.to_a.sample
   )
