@@ -31,6 +31,7 @@ import { fetchCurrentLocation } from '../components/fetch_current_location';
 import { bookUnicorn } from '../components/fetch_current_location';
 
 import { initFixBookingCardOnScroll } from '../components/booking-card';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 
 // Fixing booking card when scrolling
 // initFixBookingCardOnScroll();
@@ -46,6 +47,8 @@ import { initFixBookingCardOnScroll } from '../components/booking-card';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   fetchCurrentLocation();
+  initAutocomplete();
+
   // currentLocationLink.addEventListener('click', fetchCurrentLocation)
   // Call your functions here, e.g:
   // initSelect2();

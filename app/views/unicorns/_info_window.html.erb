@@ -1,2 +1,38 @@
 <h2><%= unicorn.name %></h2>
-<p><%= unicorn.location %></p>
+<p> <% if unicorn.magic_power == "ailé" %>
+    <p>👼</p>
+  <% elsif unicorn.magic_power == "yogi" %>
+    <p>🧘‍♀️</p>
+  <% elsif unicorn.magic_power == "sublimatrice de jardin" %>
+    <p>🌱</p>
+  <% elsif unicorn.magic_power == "voyante" %>
+    <p>🔮</p>
+  <% else %>
+    <p>❤️</p>
+  <% end %></p>
+<p>
+
+
+
+<p> <% sum = 0 %>
+  <% if unicorn.bookings.size == 0 %>
+    <% 5.times do %>
+      <i class="far fa-star"></i>
+    <% end %>
+  <% else %>
+    <% unicorn.bookings.each do |booking| %>
+      <% if booking.rating != nil %>
+        <% sum += booking.rating %>
+      <% else %>
+        <% sum = 1 %>
+      <% end %>
+    <% end %>
+    <% average = sum / unicorn.bookings.size %>
+    <% average.times do %>
+      <i class="fas fa-star"></i>
+    <% end %>
+    <% (5 - average).times do %>
+      <i class="far fa-star"></i>
+    <% end %>
+  <% end %>
+</p>

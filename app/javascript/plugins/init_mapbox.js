@@ -7,7 +7,7 @@ const mapElement = document.getElementById('map');
 
 const buildMap = () => {
   mapboxgl.accessToken = mapboxKey;
-  const map = new mapboxgl.Map({
+  return new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/zekumi/cke2sfgrf17yt19nwrgezy168',
     center: [2.3488,48.8534],
@@ -19,14 +19,14 @@ const buildMap = () => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.info_Window); // add this
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
     const element = document.createElement('div');
     element.className = 'marker';
     element.style.backgroundImage = `url('${marker.image_url}')`;
     element.style.backgroundSize = 'contain';
-    element.style.width = '25px';
-    element.style.height = '25px';
+    element.style.width = '35px';
+    element.style.height = '35px';
 
     new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
