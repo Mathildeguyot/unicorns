@@ -1,7 +1,11 @@
 .container-user-unicorns {
-  margin:20px;
+  margin-left:50px;
+  margin-top:20px
 }
 
+#inline {
+  margin-bottom:20px;
+}
 .list-group-horizontal {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 3px 1px;
   margin:15px 100px 10px 100px;
@@ -56,6 +60,10 @@ mark.title-unico {
   .fa-trash-alt {
     margin-right:3px
 }
+  .container-user-unicorns {
+    margin-left:20px;
+    margin-top:20px
+  }
 
 }
 
