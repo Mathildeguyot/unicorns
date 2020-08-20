@@ -1,9 +1,9 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.giphy.com/media/26AHG5KGFxSkUWw1i/giphy.gif); background-size: contain;">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://media.giphy.com/media/26AHG5KGFxSkUWw1i/giphy.gif); background-size: contain;">
   <div class="container ">
     <h1>Loue une licorne et laisse-toi guider </h1>
     <p class="mb-5">Que ta journée soit plus belle qu'une licorne qui pète des arcs-en-ciel.</p>
 
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <%= simple_form_for :search, url: unicorns_path, method: :get do |f| %>
       <div class="search-form-control form-group ">
 
         <%= button_tag type: 'icon', class: "btn btn-round btn-left", id: "current-location" do %>
@@ -13,17 +13,17 @@
         <div class="form-row">
           <div class="col" id="col-location">
             <label class="label-search-bar" for="location">Où ?</label>
-            <input class="form-control string required" type="text" name="search[query]" id="location" placeholder="Indique une adresse" />
+            <input class="form-control string required" type="text" name="search[query]" id="location" placeholder="Indique ta ville" />
           </div>
 
           <div class="col" id="col-start-date">
             <label class="label-search-bar" for="start_date">Arrivée de ta licorne</label>
-            <input class="form-control string required" type="text" name="search[query]" id="start_date" placeholder="Sélectionne une date" />
+            <input class="form-control string required" type="text" id="start_date" placeholder="Sélectionne une date" />
           </div>
 
           <div class="col" id="col-end-date">
             <label class="label-search-bar" for="end_date">Départ de ta licorne</label>
-            <input class="form-control string required" type="text" name="search[query]" id="end_date" placeholder="Sélectionne une date"/>
+            <input class="form-control string required" type="text" id="end_date" placeholder="Sélectionne une date"/>
           </div>
         </div>
 

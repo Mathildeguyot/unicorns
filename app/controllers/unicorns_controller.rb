@@ -2,7 +2,12 @@ class UnicornsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @unicorns = Unicorn.geocoded
+    search = params[:search]
+    if search[:query].present?
+      @unicorns = Unicorn.search_by_location(search[:query])
+    else
+      @unicorns = Unicorn.all
+    end
 
     @markers = @unicorns.map do |unicorn|
       {
