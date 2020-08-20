@@ -5,7 +5,6 @@ const fetchCurrentLocation = (event) => {
   currentLocationLink.addEventListener("click", (event) => {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition((data) => {
-      console.log(data)
       const longitude = data.coords.longitude
       const latitude = data.coords.latitude
       fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${longitude},${latitude}.json?types=address&access_token=${mapboxKey}`)

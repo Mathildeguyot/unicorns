@@ -50,7 +50,6 @@ document.addEventListener('turbolinks:load', () => {
   if (document.querySelector(".home")) {
     fetchCurrentLocation();
      initAutocomplete();
-    currentLocationLink.addEventListener('click', fetchCurrentLocation);
   };
 
   // Call your functions here, e.g:

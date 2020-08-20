@@ -1,8 +1,6 @@
 const markerhover = () => {
   const markersgroup = document.querySelectorAll(".marker");
-  console.log(markersgroup);
   const cardsgroup = document.querySelectorAll(".unicorn-index-card");
-  console.log(cardsgroup);
   markersgroup.forEach((marker) => {
     marker.addEventListener("mouseover", (event) => {
       document.querySelector(`.unicorn${marker.id}`).classList.add("special-class")
