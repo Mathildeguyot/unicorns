@@ -38,26 +38,27 @@ UNICORN_PICTURES = [
 ]
 
 CITIES = [
-  "56 Avenue Jules Ferry, 02200 Soissons Picardie",
-  "83 Avenue Millies Lacroix 59640 Dunkerque",
-  "65  Square de la Couronne PALAISEAU Île-de-France",
+  "4 bis Passage Legrand Boulogne-Billancourt",
+  "24 rue de Rivoli Paris",
+  "56 Boulevard Jules Ferry, 02200 Soissons Picardie",
+  "65  boulevard de Palaiseau PALAISEAU Île-de-France",
   "99, rue des Dunes 35400 SAINT-MALO",
-  "74  place Maurice-Charretier CHARENTON-LE-PONT Île-de-France",
+  "74  rue de Paris, CHARENTON-LE-PONT Île-de-France",
   "106  rue Beauvau MARSEILLE Provence-Alpes-Côte d'azur",
-  "10  place Maurice-Charretier CHARLEVILLE-MÉZIÈRES Champagne-Ardenne",
   "15 rue la Boétie Paris Île-de-France",
-  "24  avenue du Marechal Juin SAINT-LÔ Basse-normandie",
-  "67  rue Charles Corbeau ÉVREUX Haute-Normandie",
-  "90  rue Goya LE PERREUX-SUR-MARNE Île-de-France",
-  "86  avenue de Provence VANNES Bretagne",
-  "128  avenue Voltaire MAISONS-ALFORT Île-de-France",
-  "89 Avenue de provence VALLAURIS Provence-Alpes-Côte d'azur",
-  "119  Rue Hubert de Lisle LUNEL Languedoc-Roussillon",
+  "24  rue Marechal Juin SAINT-LÔ Basse-normandie",
+  "128  rue Voltaire MAISONS-ALFORT Île-de-France",
+  "89 Route de Font de Ciné, 06220 Vallauris",
+  "85 Chemin du Clapas, 34400 Lunel",
   "132  Rue de Strasbourg CLICHY Île-de-France",
-  "75  rue du Général Ailleret LES LILAS Île-de-France",
-  "88  place de Miremont VILLENEUVE-SUR-LOT Aquitaine",
-  "65  boulevard Bryas CREIL Picardie",
-  "73  Boulevard de Normandie FORT-DE-FRANCE Martinique"
+  "50 rue de Paradis Paris 10",
+  "111 Rue Réaumur, 75002 Paris",
+  "110 Rue Oberkampf, 75011 Paris",
+  "35 Rue du Chevalier de la Barre, 75018 Paris",
+  "11 rue des Abondances boulogne-billancourt",
+  "24 Rue du Commandant Guilbaud, 75016 Paris",
+  "5 Rue Isabey, 75016 Paris",
+  "12 avenue pierre brossolette Vincennes"
 ]
 
 10.times do
