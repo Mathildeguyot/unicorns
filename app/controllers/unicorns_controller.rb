@@ -1,6 +1,6 @@
 class UnicornsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-
+  before_action :set_unicorn, only: [:edit, :update,:destroy]
   def index
     @unicorns = Unicorn.geocoded
 
@@ -32,6 +32,24 @@ class UnicornsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @unicorn.update(params_unicorn)
+    @unicorn.user = current_user
+    if @unicorn.save
+      redirect_to unicorn_path(@unicorn)
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @unicorn.destroy
+    redirect_to unicorns_path
   end
 
   private

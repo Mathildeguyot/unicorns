@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_unicorn, only: [:create]
-  before_action :set_booking, only: [:show, :destroy]
+  before_action :set_booking, only: [:show, :destroy,:edit,:update]
 
   def index
     @bookings = Booking.where(user: current_user)
@@ -23,6 +23,19 @@ class BookingsController < ApplicationController
     @unicorn = @booking.unicorn
     @booking_duration = @booking.booking_duration
     @booking_price = @booking.booking_price
+  end
+
+  def edit
+  end
+
+  def update
+    @booking.update(params_booking)
+    @booking.user = current_user
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      render :new
+    end
   end
 
   def destroy

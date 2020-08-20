@@ -36,7 +36,10 @@
       </div>
 
       <h2>by <%= @unicorn.user.pseudo %></h2>
-
+      <div class="icons">
+        <%= link_to "", edit_unicorn_path(@unicorn), :class => "fas fa-pencil-alt"%>
+        <%= link_to "", dashboard_path, :class => "far fa-trash-alt", method: :delete, data: { confirm: "Are you sure?" }  %>
+      </div>
 
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" style="border-radius: 10px">
