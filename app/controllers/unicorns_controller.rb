@@ -1,7 +1,17 @@
 class UnicornsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-    @unicorns = Unicorn.all
+    @unicorns = Unicorn.geocoded
+
+    @markers = @unicorns.map do |unicorn|
+      {
+        lat: unicorn.latitude,
+        lng: unicorn.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { unicorn: unicorn }),
+        image_url: helpers.asset_url('mascotte.png')
+      }
+    end
   end
 
   def show
