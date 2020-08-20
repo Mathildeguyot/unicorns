@@ -1,0 +1,72 @@
+.container-user-unicorns {
+  margin:20px;
+}
+
+.list-group-horizontal {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 3px 1px;
+  margin:15px 100px 10px 100px;
+  text-align-last: start;
+}
+.list-group-item {
+  border-color: white;
+  margin-right: 3px;
+  border-right:none;
+  text-align:center;
+}
+
+
+mark.title-unico {
+  color: #a6acec;
+  font-family: $headers-font;
+  background-color:white;
+}
+
+#dropdownMenuLink {
+  background-color: white;
+  text-align:center;
+  border-color:white;
+  font-size: 24px;
+  box-shadow: none;
+}
+
+
+.dropdown-menu {
+  min-width: 65px;
+
+}
+
+.icon-delete-edit {
+  padding-right:15px
+}
+
+.fa-pencil-alt {
+  padding-right: 6px;
+  color:#a6acec;
+}
+
+.fa-trash-alt {
+  color:#a6acec;
+}
+
+// Small devices
+@media (max-width: 767px) {
+  .list-group-horizontal {
+    margin:15px 5px 30px 5px;
+  }
+  .fa-trash-alt {
+    margin-right:3px
+}
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+   }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+
