@@ -3,14 +3,13 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 const mapboxKey = "pk.eyJ1IjoiemVrdW1pIiwiYSI6ImNrZTFlcTk4azQ1MmcyenBhdGszb2ZiYzMifQ.16F2V3sKe52p6e-mXa4JKw"
 
 
-
 const mapElement = document.getElementById('map');
 
 const buildMap = () => {
   mapboxgl.accessToken = mapboxKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
+    style: 'mapbox://styles/zekumi/cke2sfgrf17yt19nwrgezy168',
     center: [2.3488,48.8534],
     zoom: 12
   });
@@ -20,15 +19,15 @@ const buildMap = () => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.info_Window); // add this
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
     const element = document.createElement('div');
     element.className = `marker ${marker.id}`;
     element.id = `${marker.id}`;
     element.style.backgroundImage = `url('${marker.image_url}')`;
     element.style.backgroundSize = 'contain';
-    element.style.width = '25px';
-    element.style.height = '25px';
+    element.style.width = '35px';
+    element.style.height = '35px';
 
     new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])

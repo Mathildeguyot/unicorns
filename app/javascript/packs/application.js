@@ -32,6 +32,7 @@ import { bookUnicorn } from '../components/fetch_current_location';
 
 import { initFixBookingCardOnScroll } from '../components/booking-card';
 import markerhover from '../components/hovering_markers.js'
+import { initAutocomplete } from '../plugins/init_autocomplete';
 
 // Fixing booking card when scrolling
 // initFixBookingCardOnScroll();
@@ -48,6 +49,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   if (document.querySelector(".home")) {
     fetchCurrentLocation();
+     initAutocomplete();
     currentLocationLink.addEventListener('click', fetchCurrentLocation);
   };
 

@@ -4,6 +4,7 @@
   background-color: white;
   border-radius: 56px !important;
   padding: 8px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 .label-search-bar {
@@ -47,7 +48,8 @@
 }
 
 .form-row {
-  padding-left: 90px;
+  padding-left: 80px;
+  padding-right: 30px;
 }
 
 #col-location {

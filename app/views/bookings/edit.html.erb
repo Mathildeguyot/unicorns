@@ -1,0 +1,10 @@
+  <h1 id="title-edit-booking">Modifier ma réservation</h1>
+<div class="container-edit-booking" style="width: 300px">
+  <%= simple_form_for [@unicorn, @booking] do |f| %>
+  <%= f.input :start_date, required: false, label:false, as: :string, input_html: {id: 'start_date'} %>
+  <%= hidden_field_tag "booking-start" %>
+  <%= f.input :end_date, required: false, label:false, as: :string, input_html: {id: 'end_date'} %>
+  <%= hidden_field_tag "booking-end" %>
+  <%= f.button :submit, "Réserver ma licorne", class: "btn btn-flat" %>
+<% end %>
+</div>

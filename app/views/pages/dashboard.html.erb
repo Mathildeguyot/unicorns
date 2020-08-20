@@ -1,0 +1,20 @@
+<div class="container-user-unicorns">
+  <h1>Coucou <%= current_user.pseudo %></h1>
+
+  <div class="dash">
+    <div id="inline">
+      <h2>Voici vos licornes actuellement sur <mark class="title-unico">UNICO</mark></h2>
+    </div>
+     <% @my_unicorns.each do |unicorn|%>
+    <ul class="list-group list-group-horizontal">
+        <li class="list-group-item flex-fill"><%= unicorn.name %></li>
+        <li class="list-group-item flex-fill"><%= unicorn.magic_power %></li>
+        <li class="list-group-item flex-fill"><%= unicorn.price %></li>
+        <div class="icon-delete-edit">
+          <li class="list-group-item flex-fill"><%= link_to "", unicorn_path(unicorn), :class => "fas fa-pencil-alt"%>  <%= link_to "", unicorn_path(unicorn), :class => "far fa-trash-alt", method: :delete, data: { confirm: "Are you sure?" }  %></li>
+        </div>
+    </ul>
+    <% end %>
+  </div>
+</div>
+
