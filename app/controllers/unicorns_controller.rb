@@ -4,7 +4,7 @@ class UnicornsController < ApplicationController
   def index
     search = params[:search]
     if search[:query].present?
-      @unicorns = Unicorn.search_by_location(search[:query])
+      @unicorns = Unicorn.near(search[:query], 10)
     else
       @unicorns = Unicorn.all
     end
