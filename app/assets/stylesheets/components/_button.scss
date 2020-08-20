@@ -10,3 +10,17 @@
   background: linear-gradient(to bottom right, $blue, $purple);
   color: white;
 }
+
+.btn-round {
+  background-color: $purple;
+  transition: background 0.3s ease;
+  font-size: 32px;
+  height: 58px;
+  border-radius: 50%;
+  color: white;
+}
+
+.btn-round:hover {
+  background: linear-gradient(to bottom, #dfaff6, #ffadda, #ffb5bc, #ffc4a6, #ffd6a0, #f7e0a1, #edeba6, #e0f5af, #cbf7bb, #b8f7ca, #a9f6d8, #9ff4e6);
+  color: white;
+}

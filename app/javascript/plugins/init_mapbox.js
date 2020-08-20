@@ -3,13 +3,16 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 const mapboxKey = "pk.eyJ1IjoiemVrdW1pIiwiYSI6ImNrZTFlcTk4azQ1MmcyenBhdGszb2ZiYzMifQ.16F2V3sKe52p6e-mXa4JKw"
 
 
+
 const mapElement = document.getElementById('map');
 
 const buildMap = () => {
   mapboxgl.accessToken = mapboxKey;
-  return new mapboxgl.Map({
+  const map = mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [2.3488,48.8534],
+    zoom: 12
   });
 };
 
