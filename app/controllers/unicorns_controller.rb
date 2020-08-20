@@ -3,7 +3,7 @@ class UnicornsController < ApplicationController
   before_action :set_unicorn, only: [:edit, :update,:destroy]
   def index
     search = params[:search]
-    if search[:query].present?
+    if !search.nil?
       @unicorns = Unicorn.near(search[:query], 10)
     else
       @unicorns = Unicorn.all
