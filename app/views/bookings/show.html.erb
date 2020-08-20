@@ -54,7 +54,7 @@
                   <% count += 1 %>
                 <% end %>
               <% end %>
-              <% average = sum / count %>
+              <% average = sum / @unicorn.bookings.size %>
               <% average.times do %>
                 <i class="fas fa-star"></i>
               <% end %>
