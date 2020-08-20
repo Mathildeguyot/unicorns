@@ -80,7 +80,9 @@
     box-sizing: border-box;
     width: 100%;
     h1 {
-      color: black;
+      background: linear-gradient(to right, #dfaff6, #ffadda, #ffd6a0, #e0f5af, #a9f6d8, #9ff4e6);
+      -webkit-background-clip: text;
+      color: transparent;
       margin-top: 0px;
       margin-bottom: 16px;
       text-align: center;
@@ -188,3 +190,18 @@
 .far.fa-trash-alt {
   margin-left: 10px;
 }
+
+.booking-info1 {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    color: black;
+    font-size: 20px;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+

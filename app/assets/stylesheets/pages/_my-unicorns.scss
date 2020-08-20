@@ -1,15 +1,28 @@
+.wrapper-background {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .container-user-unicorns {
-  margin-left:50px;
-  margin-top:20px
+  flex-grow: 1;
+  background-position: top;
+    h1 {
+    margin:30px 0 20px 70px;
+  }
 }
 
 #inline {
   margin-bottom:20px;
+  h2 {
+    margin:20px 0 30px 70px;
+  }
 }
 .list-group-horizontal {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 3px 1px;
   margin:15px 100px 10px 100px;
   text-align-last: start;
+  background-color:white;
 }
 .list-group-item {
   border-color: white;
@@ -41,6 +54,11 @@ mark.title-unico {
 
 .icon-delete-edit {
   padding-right:15px
+}
+
+.icon-delete-edit a {
+  padding-right:15px;
+  text-decoration: none;
 }
 
 .fa-pencil-alt {

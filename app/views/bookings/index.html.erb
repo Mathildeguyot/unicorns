@@ -12,7 +12,20 @@
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><%= booking.start_date %> ➡ <%= booking.end_date %></li>
-          <li class="list-group-item"><%= booking.unicorn.magic_power %></li>
+          <li class="list-group-item">
+            <% if booking.unicorn.magic_power == "ailé" %>
+            👼
+          <% elsif booking.unicorn.magic_power == "yogi" %>
+            🧘‍♀️
+          <% elsif booking.unicorn.magic_power == "sublimatrice de jardin" %>
+            🌱
+          <% elsif booking.unicorn.magic_power == "voyante" %>
+            🔮
+          <% else %>
+            🌡️
+          <% end %>
+            <%= booking.unicorn.magic_power %>
+            </li>
           <li class="list-group-item"><%= booking.unicorn.description %></li>
         </ul>
       </div>
