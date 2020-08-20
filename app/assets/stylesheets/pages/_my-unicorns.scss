@@ -1,0 +1,38 @@
+.container-user-unicorns {
+  margin:20px;
+}
+
+.list-group-horizontal {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 3px 1px;
+  margin:15px 50px 30px 50px;
+}
+.list-group-item {
+  border-color: white;
+  margin-right: 3px;
+  border-right:none;
+}
+
+
+#title-unico {
+  color: #a6acec;
+  text-shadow: 1px 1px 3px white;
+  font-family: $headers-font;
+  margin-left: 6px;
+}
+
+#dropdownMenuLink {
+  background-color: white;
+  text-align:center;
+  border-color:white;
+  font-size: 20px;
+}
+
+#inline h2 {
+  display: inline-flex;
+}
+
+.show {
+  position:relative;
+  top:5px;
+  right:10px;
+}

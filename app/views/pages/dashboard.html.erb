@@ -1,0 +1,24 @@
+<div class="container-user-unicorns">
+  <h1>Coucou <%= current_user.pseudo %></h1>
+
+  <div class="dash">
+    <div id="inline">
+      <h2>Voici vos licornes actuellement sur  <div id="title-unico"> UNICO</div></h2>
+    </div>
+    <ul class="list-group list-group-horizontal">
+      <% @my_unicorns.each do |unicorn|%>
+      <li class="list-group-item flex-fill"><%= unicorn.name %></li>
+      <li class="list-group-item flex-fill"><%= unicorn.magic_power %></li>
+      <li class="list-group-item flex-fill"><%= unicorn.price %></li>
+        <div class="dropdown show">
+          <a class="btn btn-primary" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">...</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#"><i class="fas fa-pencil-alt"></i></a>
+            <a class="dropdown-item" href="#"><i class="far fa-trash-alt"></i></a>
+          </div>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
