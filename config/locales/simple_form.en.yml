@@ -9,6 +9,15 @@ en:
       booking:
         start_date: 'Arrivée de ta licorne'
         end_date: 'Départ de ta licorne'
+    labels:
+      unicorn:
+        name: 'Nom'
+        magic_power: 'Pouvoir magique'
+        price: 'Prix'
+        location: 'Lieu'
+    buttons:
+        unicorn:
+          submit: 'Crée ta licorne'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
