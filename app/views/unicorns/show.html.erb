@@ -8,17 +8,14 @@
         <h1><%= @unicorn.name %> -</h1>
         <div class="rating">
           <% sum = 0 %>
-          <% count = 0 %>
           <% if @unicorn.bookings.size == 0 %>
             <% 5.times do %>
               <i class="far fa-star"></i>
             <% end %>
-            <% count = count + 1 %>
           <% else %>
             <% @unicorn.bookings.each do |booking| %>
               <% if booking.rating != nil %>
                 <% sum += booking.rating %>
-                <% count += 1 %>
               <% else %>
                 <% sum = 1 %>
                 <% count += 1 %>
@@ -62,7 +59,20 @@
 
 
       <div class="content">
-        <h2>✨ <%= @unicorn.magic_power %></h2>
+        <h2>
+          <% if @unicorn.magic_power == "ailé" %>
+            👼
+          <% elsif @unicorn.magic_power == "yogi" %>
+            🧘‍♀️
+          <% elsif @unicorn.magic_power == "sublimatrice de jardin" %>
+            🌱
+          <% elsif @unicorn.magic_power == "voyante" %>
+            🔮
+          <% else %>
+            🌡️
+          <% end %>
+          <%= @unicorn.magic_power %>
+        </h2>
         <p><%= @unicorn.description %></p>
       </div>
 
