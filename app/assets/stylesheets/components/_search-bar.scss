@@ -24,11 +24,12 @@
 .search-form-control .btn-left {
   position: absolute;
   top: 20px;
-  bottom: 8px;
-  left: 16px;
-  border: 1px solid white;
+  bottom: 0px;
+  left: 308px;
+  z-index: 1;
+  border: none;
   &:focus {
-    border: 1px solid white;
+    border: none;
     outline: none !important;
     box-shadow: 0 0px 0px white;
   }
@@ -48,8 +49,8 @@
 }
 
 .form-row {
-  padding-left: 80px;
-  padding-right: 30px;
+  padding-right: 20px;
+  padding-left: 10px;
 }
 
 #col-location {
