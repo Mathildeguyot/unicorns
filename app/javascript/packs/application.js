@@ -31,6 +31,7 @@ import { fetchCurrentLocation } from '../components/fetch_current_location';
 import { bookUnicorn } from '../components/fetch_current_location';
 
 import { initFixBookingCardOnScroll } from '../components/booking-card';
+import markerhover from '../components/hovering_markers.js'
 
 // Fixing booking card when scrolling
 // initFixBookingCardOnScroll();
@@ -45,9 +46,22 @@ import { initFixBookingCardOnScroll } from '../components/booking-card';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-  fetchCurrentLocation();
-  // currentLocationLink.addEventListener('click', fetchCurrentLocation)
+  if (document.querySelector(".home")) {
+    fetchCurrentLocation();
+    currentLocationLink.addEventListener('click', fetchCurrentLocation);
+  };
+
   // Call your functions here, e.g:
   // initSelect2();
+  if (document.querySelector("#map")) {
+    markerhover();
+  };
 });
+
+
+ // je sélectionne tous les markers (all)
+ //je sélectionne toutes mes cards qui ont leur dataset id
+ //j'ajoute un event listener sur touts les markers mouseenter
+ //j'aljoute une classe à la card en question
+
 

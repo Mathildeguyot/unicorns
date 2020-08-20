@@ -8,7 +8,7 @@ const mapElement = document.getElementById('map');
 
 const buildMap = () => {
   mapboxgl.accessToken = mapboxKey;
-  const map = mapboxgl.Map({
+  return new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
     center: [2.3488,48.8534],
@@ -23,7 +23,8 @@ const addMarkersToMap = (map, markers) => {
     const popup = new mapboxgl.Popup().setHTML(marker.info_Window); // add this
 
     const element = document.createElement('div');
-    element.className = 'marker';
+    element.className = `marker ${marker.id}`;
+    element.id = `${marker.id}`;
     element.style.backgroundImage = `url('${marker.image_url}')`;
     element.style.backgroundSize = 'contain';
     element.style.width = '25px';
