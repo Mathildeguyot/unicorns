@@ -1,9 +1,12 @@
 .principal-container {
   margin-left: 50px;
+  margin-top:20px;
+  margin-bottom:20px;
   h1 {
     background: linear-gradient(to right, #dfaff6, #ffadda, #ffb5bc, #ffc4a6, #ffd6a0, #f7e0a1, #edeba6, #e0f5af, #cbf7bb, #b8f7ca, #a9f6d8, #9ff4e6);
     -webkit-background-clip: text;
     color: transparent;
+    margin-bottom:30px;
   }
 }
 
