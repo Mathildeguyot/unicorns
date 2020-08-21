@@ -55,7 +55,7 @@ class UnicornsController < ApplicationController
 
   def destroy
     @unicorn.destroy
-    redirect_to unicorns_path
+    redirect_to dashboard_path
   end
 
   private

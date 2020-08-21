@@ -19,6 +19,10 @@
   color: #a6acec;
   text-shadow: 1px 1px 3px white;
   font-family: $headers-font;
+  a {
+    text-decoration: none;
+    color: #a6acec
+  }
 }
 
 .nav-link {
