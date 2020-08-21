@@ -12,7 +12,7 @@
 
     <div class="cards-grid">
       <% @unicorns.each do |unicorn| %>
-        <div class="unicorn-index-card unicorn<%= unicorn.id %>" data-id="<%= unicorn.id %>">
+        <div class="unicorn-index-card unicorn<%= unicorn.id %>" data-id="<%= unicorn.id %>" id="<%= unicorn.id %>">
 
           <div <%= "id=unicorn#{unicorn.id}" %> class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
