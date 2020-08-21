@@ -1,4 +1,9 @@
 //BOOKING CARD
+.container {
+    display: flex;
+    justify-content: center;
+}
+
 .booking-card-container {
   border: 1px solid rgb(221, 221, 221);
   border-radius: 12px; padding: 24px;
@@ -249,6 +254,7 @@
   }
 }
 
+
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .presentation {
@@ -269,9 +275,5 @@
   .content {
     width: 510px;
   }
-
-  .container {}
-      display: flex;
-    justify-content: center;
 }
 
