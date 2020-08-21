@@ -3,7 +3,7 @@
   border: 1px solid rgb(221, 221, 221);
   border-radius: 12px; padding: 24px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-  margin: 48px 24px;
+  margin: 68px 24px;
   max-width: 400px;
   background-color: $light-gray;
 }
@@ -128,7 +128,7 @@
   box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   align-items: center;
-  width: 550px;
+  width: 520px;
   height: 200px;
   .carousel-inner {
     width: 350px;
@@ -142,7 +142,7 @@
   }
   .card-text {
     position: relative;
-    right: 21px;
+    right: 10px;
     h2 {
       margin-bottom: 5px;
     }
@@ -204,3 +204,74 @@
     text-decoration: none;
   }
 }
+
+//small devices
+@media (max-width: 767px) {
+  .presentation {
+    width: 260px;
+  }
+  .booking-show-card {
+      width: 320px;
+      margin:10px;
+      padding:10px
+  }
+  h1 {
+    font-size:18px;
+  }
+
+  h2 {
+      font-size:14px
+    }
+  .content {
+    width: 260px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+.presentation {
+    width: 510px;
+  }
+  .booking-show-card {
+      width: 670px;
+      margin:10px;
+      padding:10px
+  }
+  h1 {
+    font-size:18px;
+  }
+
+  h2 {
+      font-size:14px
+    }
+  .content {
+    width: 510px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .presentation {
+    width: 710px;
+  }
+  .booking-show-card {
+      width: 800px;
+      margin:10px;
+      padding:10px
+  }
+  h1 {
+    font-size:30px;
+  }
+
+  h2 {
+      font-size:22px
+    }
+  .content {
+    width: 510px;
+  }
+
+  .container {}
+      display: flex;
+    justify-content: center;
+}
+

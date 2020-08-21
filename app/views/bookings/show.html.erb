@@ -45,7 +45,6 @@
         <div class="title" style="margin-top: 0px">
           <div class="rating" style="margin-top: 0px; margin-left: 0px">
             <% sum = 0 %>
-            <% count = 0 %>
             <% if @unicorn.bookings.count == 0 %>
               <% 5.times do %>
                 <i class="far fa-star"></i>
@@ -54,7 +53,6 @@
               <% @unicorn.bookings.each do |booking| %>
                 <% if booking.rating != nil %>
                   <% sum += booking.rating %>
-                  <% count += 1 %>
                 <% end %>
               <% end %>
               <% average = sum / @unicorn.bookings.size %>
@@ -99,10 +97,6 @@
               <i class="fas fa-star"></i>
             <% end %>
             <% (5 - booking.rating).times do %>
-              <i class="far fa-star"></i>
-            <% end %>
-          <% else %>
-            <% 5.times do %>
               <i class="far fa-star"></i>
             <% end %>
           <% end %>

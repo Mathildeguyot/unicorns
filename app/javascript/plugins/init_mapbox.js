@@ -10,7 +10,6 @@ const buildMap = () => {
   return new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/zekumi/cke2sfgrf17yt19nwrgezy168',
-    center: [2.3488,48.8534],
     zoom: 12
   });
 };
@@ -22,7 +21,7 @@ const addMarkersToMap = (map, markers) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
     const element = document.createElement('div');
-    element.className = `marker ${marker.id}`;
+    element.className = `marker marker${marker.id}`;
     element.id = `${marker.id}`;
     element.style.backgroundImage = `url('${marker.image_url}')`;
     element.style.backgroundSize = 'contain';

@@ -11,7 +11,6 @@ const fetchCurrentLocation = (event) => {
         .then(response => response.json())
         .then((data) => {
           const address = data.features[0].place_name
-          console.log(address)
           const location = document.querySelector("#location")
           console.log(location)
           location.value = address

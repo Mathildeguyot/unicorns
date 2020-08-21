@@ -1,42 +1,41 @@
 <div class="container">
   <div class="d-flex justify-content-between">
     <div class="presentation">
-      <div class="title">
-        <h1><%= @unicorn.name %> -</h1>
-        <div class="rating">
-          <% sum = 0 %>
-          <% if @unicorn.bookings.size == 0 %>
-            <% 5.times do %>
-              <i class="far fa-star"></i>
-            <% end %>
-          <% else %>
-            <% @unicorn.bookings.each do |booking| %>
-              <% if booking.rating != nil %>
-                <% sum += booking.rating %>
-              <% else %>
-                <% sum = 1 %>
+        <div class="title">
+          <h1><%= @unicorn.name %> -</h1>
+          <div class="rating">
+            <% sum = 0 %>
+            <% if @unicorn.bookings.size == 0 %>
+              <% 5.times do %>
+                <i class="far fa-star"></i>
+              <% end %>
+            <% else %>
+              <% @unicorn.bookings.each do |booking| %>
+                <% if booking.rating != nil %>
+                  <% sum += booking.rating %>
+                <% else %>
+                  <% sum = 1 %>
+                <% end %>
+              <% end %>
+              <% average = sum / @unicorn.bookings.size %>
+              <% average.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+              <% (5 - average).times do %>
+                <i class="far fa-star"></i>
               <% end %>
             <% end %>
-            <% average = sum / @unicorn.bookings.size %>
-            <% average.times do %>
-              <i class="fas fa-star"></i>
-            <% end %>
-            <% (5 - average).times do %>
-              <i class="far fa-star"></i>
-            <% end %>
-          <% end %>
+          </div>
         </div>
-      </div>
 
-      <h2>by <%= @unicorn.user.pseudo %></h2>
+      <h2>by <%= @unicorn.user.pseudo%> -
+          <%= link_to "", edit_unicorn_path(@unicorn), :class => "fas fa-pencil-alt"%>
+          <%= link_to "", unicorn_path(@unicorn), :class => "far fa-trash-alt", method: :delete, data: { confirm: "Are you sure?" }  %>
+      </h2>
 
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" style="border-radius: 10px">
           <% active = true %>
-          <div class="icons">
-            <%= link_to "", edit_unicorn_path(@unicorn), :class => "fas fa-pencil-alt"%>
-            <%= link_to "", dashboard_path, :class => "far fa-trash-alt", method: :delete, data: { confirm: "Are you sure?" }  %>
-          </div>
           <% @unicorn.photos.each do |photo| %>
             <div class="carousel-item <%= 'active' if active %>">
               <%= cl_image_tag photo.key, crop: :fit, class: "d-block w-100", alt: "..." %>
@@ -62,7 +61,7 @@
             👼
           <% elsif @unicorn.magic_power == "yogi" %>
             🧘‍♀️
-          <% elsif @unicorn.magic_power == "sublimatrice de jardin" %>
+          <% elsif @unicorn.magic_power == "horticultrice" %>
             🌱
           <% elsif @unicorn.magic_power == "voyante" %>
             🔮
@@ -83,10 +82,6 @@
               <i class="fas fa-star"></i>
             <% end %>
             <% (5 - booking.rating).times do %>
-              <i class="far fa-star"></i>
-            <% end %>
-          <% else %>
-            <% 5.times do %>
               <i class="far fa-star"></i>
             <% end %>
           <% end %>
