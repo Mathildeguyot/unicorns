@@ -2,9 +2,6 @@ import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 const mapboxKey = "pk.eyJ1IjoiemVrdW1pIiwiYSI6ImNrZTFlcTk4azQ1MmcyenBhdGszb2ZiYzMifQ.16F2V3sKe52p6e-mXa4JKw"
 
-
-const mapElement = document.getElementById('map');
-
 const buildMap = () => {
   mapboxgl.accessToken = mapboxKey;
   return new mapboxgl.Map({
@@ -42,6 +39,7 @@ const fitMapToMarkers = (map, markers) => {
 };
 
 const initMapbox = () => {
+  const mapElement = document.getElementById('map');
   if (mapElement) {
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.markers);
