@@ -51,7 +51,6 @@ const initFlatpickr = () => {
     onClose: function(selectedDates, dateStr, instance) {
       startDate.value = selectedDates;
     },
-    defaultDate: startDateHome,
     dateFormat: "F j, Y",
     minDate: "today",
   })
