@@ -20,14 +20,14 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'omniauth-facebook'
 
-gem 'turbolinks_render'
+# gem 'turbolinks_render'
 
 
 gem 'geocoder'
 
 gem 'figaro'
 
-gem 'jquery-rails'
+# gem 'jquery-rails'
 
 
 # Use Redis adapter to run Action Cable in production
