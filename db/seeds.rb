@@ -46,7 +46,6 @@ CITIES = [
   "74  rue de Paris, CHARENTON-LE-PONT Île-de-France",
   "106  rue Beauvau MARSEILLE Provence-Alpes-Côte d'azur",
   "15 rue la Boétie Paris Île-de-France",
-  "24  rue Marechal Juin SAINT-LÔ Basse-normandie",
   "128  rue Voltaire MAISONS-ALFORT Île-de-France",
   "89 Route de Font de Ciné, 06220 Vallauris",
   "85 Chemin du Clapas, 34400 Lunel",

@@ -60,7 +60,7 @@ document.addEventListener('turbolinks:load', () => {
   if (document.querySelector("#map")) {
     markerhover();
     cardhover();
-  });
+  };
 });
 
 
