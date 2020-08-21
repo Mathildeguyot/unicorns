@@ -1,0 +1,33 @@
+
+<div id="testarea"></div>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQUw9JwVg6FPgLNtSWEjINSpwQ-yZL0-CrCaA&usqp=CAU" alt="Cursor" class="cursor" />
+
+<style>
+  #testarea {
+ width: 100%;
+ height: 1000px;
+ cursor: none;
+}
+
+.cursor {
+ position: absolute;
+ width: 500px;
+ height: 500px;
+ left: -100px;
+ cursor: none;
+ pointer-events: none;
+}
+</style>
+
+<script>
+$(function () {
+  $("#testarea").mousemove(function (e) {
+    $(".cursor").show().css({
+      "left": e.clientX,
+      "top": e.clientY
+    });
+  }).mouseout(function () {
+    $(".cursor").hide();
+  });
+});
+</script>
