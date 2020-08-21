@@ -9,6 +9,7 @@ const unicornTotalPrice= document.querySelector("#unicorn-total-price");
 const serviceFees= document.querySelector("#service-fees");
 const bookingTotalPrice= document.querySelector("#booking-total-price");
 
+
 const days_between=(date1, date2) => {
   // The number of milliseconds in one day
     const oneDay = 1000 * 60 * 60 * 24
@@ -26,7 +27,24 @@ const days_between=(date1, date2) => {
 
 const initFlatpickr = () => {
 
-  flatpickr("#start_date", {
+  if (document.querySelector(".home")) {
+
+    flatpickr("#start_date", {
+    onChange: function(selectedDates, dateStr, instance) {
+      end_date.set('minDate',dateStr)
+    },
+    dateFormat: "F j, Y",
+    minDate: "today",
+    })
+
+    const end_date = flatpickr("#end_date", {
+      dateFormat: "F j, Y",
+    });
+
+
+  } else {
+
+    flatpickr("#start_date", {
     onChange: function(selectedDates, dateStr, instance) {
       end_date.set('minDate',dateStr)
     },
@@ -34,24 +52,23 @@ const initFlatpickr = () => {
       startDate.value = selectedDates;
     },
     dateFormat: "F j, Y",
-    minDate: "today"
+    minDate: "today",
   })
 
+    const end_date = flatpickr("#end_date", {
+      onClose: function(selectedDates, dateStr, instance) {
+        endDate.value = dateStr;
+        const start = new Date(startDate.value);
+        const end = new Date(endDate.value);
+        bookingDuration.innerText = ` x ${days_between(start, end)}j`;
+        unicornTotalPrice.innerText = `${parseFloat(unicornPrice.innerText) * days_between(start, end)}€`;
+        serviceFees.innerText = `${(parseFloat(unicornTotalPrice.innerText) * 0.05).toFixed(2) }€`;
+        bookingTotalPrice.innerText = `${(parseFloat(unicornTotalPrice.innerText) +parseFloat(serviceFees.innerText)).toFixed(2)}€`;
 
-  const end_date = flatpickr("#end_date", {
-    onClose: function(selectedDates, dateStr, instance) {
-      endDate.value = dateStr;
-      const start = new Date(startDate.value);
-      const end = new Date(endDate.value);
-      bookingDuration.innerText = ` x ${days_between(start, end)}j`;
-      unicornTotalPrice.innerText = `${parseFloat(unicornPrice.innerText) * days_between(start, end)}€`;
-      serviceFees.innerText = `${(parseFloat(unicornTotalPrice.innerText) * 0.05).toFixed(2) }€`;
-      bookingTotalPrice.innerText = `${(parseFloat(unicornTotalPrice.innerText) +parseFloat(serviceFees.innerText)).toFixed(2)}€`;
-
-    },
-    dateFormat: "F j, Y",
-  });
-
+      },
+      dateFormat: "F j, Y",
+    });
+  }
 };
 
 export { initFlatpickr };

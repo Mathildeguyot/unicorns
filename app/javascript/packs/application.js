@@ -48,9 +48,8 @@ import { initFlatpickr } from '../plugins/flatpickr';
 
 
 document.addEventListener('turbolinks:load', () => {
-
-  initMapbox();
   initFlatpickr();
+  initMapbox();
   if (document.querySelector(".home")) {
     fetchCurrentLocation();
      initAutocomplete();
