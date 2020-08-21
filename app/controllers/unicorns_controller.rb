@@ -5,6 +5,8 @@ class UnicornsController < ApplicationController
     search = params[:search]
     if !search.nil?
       @unicorns = Unicorn.near(search[:query], 10)
+      @booking_start = search[:startdate]
+      @booking_end = search[:enddate]
     else
       @unicorns = Unicorn.all
     end
@@ -23,6 +25,8 @@ class UnicornsController < ApplicationController
   def show
     @unicorn = Unicorn.find(params[:id])
     @booking = Booking.new
+    @booking_start = params[:start]
+    @booking_end = params[:end]
   end
 
   def new
