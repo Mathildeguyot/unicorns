@@ -34,6 +34,7 @@ import { initFixBookingCardOnScroll } from '../components/booking-card';
 import markerhover from '../components/hovering_markers.js'
 import cardhover from '../components/hovering_cards.js'
 import { initAutocomplete } from '../plugins/init_autocomplete';
+import { initFlatpickr } from '../plugins/flatpickr';
 
 // Fixing booking card when scrolling
 // initFixBookingCardOnScroll();
@@ -48,6 +49,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initFlatpickr();
   if (document.querySelector(".home")) {
     fetchCurrentLocation();
      initAutocomplete();
@@ -58,7 +60,7 @@ document.addEventListener('turbolinks:load', () => {
   if (document.querySelector("#map")) {
     markerhover();
     cardhover();
-  };
+  });
 });
 
 

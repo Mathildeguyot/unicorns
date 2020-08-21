@@ -20,6 +20,9 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'omniauth-facebook'
 
+gem 'turbolinks_render'
+
+
 gem 'geocoder'
 
 gem 'figaro'
