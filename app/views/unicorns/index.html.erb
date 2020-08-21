@@ -1,10 +1,11 @@
 <div class="index">
 
     <div class="left-index">
-      <h1 id="title-page">Toutes les licornes (<%= Unicorn.count %>)</h1>
 
-
-    <!--   <% if policy(Unicorn).create? %>
+      <h1 id="title-page">Toutes les licornes <%= "à #{params[:search][:query]} " unless params.dig(:search, :query).nil? %>(<%= @unicorns.length %>)</h1>
+    
+  
+  <!--   <% if policy(Unicorn).create? %>
         <%= link_to 'Create a unicorn', new_unicorn_path %>
       <% end %> -->
 
@@ -74,18 +75,20 @@
               <% end %>
             </div>
             <p><i class="fas fa-map-marker-alt"></i>  <%= unicorn.location %></p>
-            <%= link_to "", unicorn_path(unicorn), class: "stretched-link" %>
+            <%= link_to "", unicorn_path(unicorn, start: @booking_start, end: @booking_end), class: "stretched-link" %>
           </div>
         </div>
         <% end %>
       </div>
-      </div>
+    </div>
 
   <div id="map"
     style="width: 40%; height: 85vh"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+
+
 </div>
 
 

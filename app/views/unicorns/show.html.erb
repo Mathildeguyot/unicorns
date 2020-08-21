@@ -100,9 +100,9 @@
         <div class="booking-card-calendar">
           <div class="form-wrapper">
             <%= simple_form_for [@unicorn, @booking] do |f| %>
-              <%= f.input :start_date, required: false, label:false, as: :string, input_html: {id: 'start_date'} %>
+              <%= f.input :start_date, required: false, label:false, as: :string, input_html: {id: 'start_date', value: @booking_start} %>
               <%= hidden_field_tag "booking-start" %>
-              <%= f.input :end_date, required: false, label:false, as: :string, input_html: {id: 'end_date'} %>
+              <%= f.input :end_date, required: false, label:false, as: :string, input_html: {id: 'end_date', value: @booking_end} %>
               <%= hidden_field_tag "booking-end" %>
               <%= f.button :submit, "Réserver ma licorne", class: "btn btn-flat" %>
             <% end %>
