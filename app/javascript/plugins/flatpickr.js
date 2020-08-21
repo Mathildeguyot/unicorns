@@ -24,31 +24,36 @@ const days_between=(date1, date2) => {
     return Math.round(difference_ms/oneDay + 1)
 };
 
-flatpickr("#start_date", {
-  onChange: function(selectedDates, dateStr, instance) {
-    end_date.set('minDate',dateStr)
-  },
-  onClose: function(selectedDates, dateStr, instance) {
-    startDate.value = selectedDates;
-  },
-  dateFormat: "F j, Y",
-  minDate: "today"
-})
+const initFlatpickr = () => {
+
+  flatpickr("#start_date", {
+    onChange: function(selectedDates, dateStr, instance) {
+      end_date.set('minDate',dateStr)
+    },
+    onClose: function(selectedDates, dateStr, instance) {
+      startDate.value = selectedDates;
+    },
+    dateFormat: "F j, Y",
+    minDate: "today"
+  })
 
 
-const end_date = flatpickr("#end_date", {
-  onClose: function(selectedDates, dateStr, instance) {
-    endDate.value = dateStr;
-    const start = new Date(startDate.value);
-    const end = new Date(endDate.value);
-    bookingDuration.innerText = ` x ${days_between(start, end)}j`;
-    unicornTotalPrice.innerText = `${parseFloat(unicornPrice.innerText) * days_between(start, end)}€`;
-    serviceFees.innerText = `${(parseFloat(unicornTotalPrice.innerText) * 0.05).toFixed(2) }€`;
-    bookingTotalPrice.innerText = `${(parseFloat(unicornTotalPrice.innerText) +parseFloat(serviceFees.innerText)).toFixed(2)}€`;
+  const end_date = flatpickr("#end_date", {
+    onClose: function(selectedDates, dateStr, instance) {
+      endDate.value = dateStr;
+      const start = new Date(startDate.value);
+      const end = new Date(endDate.value);
+      bookingDuration.innerText = ` x ${days_between(start, end)}j`;
+      unicornTotalPrice.innerText = `${parseFloat(unicornPrice.innerText) * days_between(start, end)}€`;
+      serviceFees.innerText = `${(parseFloat(unicornTotalPrice.innerText) * 0.05).toFixed(2) }€`;
+      bookingTotalPrice.innerText = `${(parseFloat(unicornTotalPrice.innerText) +parseFloat(serviceFees.innerText)).toFixed(2)}€`;
 
-  },
-  dateFormat: "F j, Y",
-});
+    },
+    dateFormat: "F j, Y",
+  });
 
+};
+
+export { initFlatpickr };
 
 
