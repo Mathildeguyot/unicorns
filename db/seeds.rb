@@ -52,7 +52,6 @@ CITIES = [
   "132  Rue de Strasbourg CLICHY Île-de-France",
   "50 rue de Paradis Paris 10",
   "111 Rue Réaumur, 75002 Paris",
-  "110 Rue Oberkampf, 75011 Paris",
   "35 Rue du Chevalier de la Barre, 75018 Paris",
   "11 rue des Abondances boulogne-billancourt",
   "24 Rue du Commandant Guilbaud, 75016 Paris",

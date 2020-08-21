@@ -7,7 +7,8 @@ const buildMap = () => {
   return new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/zekumi/cke2sfgrf17yt19nwrgezy168',
-    zoom: 12
+    zoom: 12,
+    center: [2.37,48.85]
   });
 };
 
