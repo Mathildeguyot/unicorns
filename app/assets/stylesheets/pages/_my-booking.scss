@@ -1,0 +1,277 @@
+//BOOKING CARD
+.booking-card-container {
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 12px; padding: 24px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  margin: 48px 24px;
+  max-width: 400px;
+  background-color: $light-gray;
+}
+
+.booking-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .btn-flat {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+
+.price-per-half-day {
+  font-size: 20px;
+}
+
+.booking-card-price-per-half-day {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 24px;
+  p {
+    font-size: 14px;
+  }
+}
+
+.booking-card-calendar {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.booking-card-price-details {
+  margin-top : 48px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.booking-card-price {
+   display: flex;
+   justify-content: space-between;
+   p {
+    margin-bottom: 8px;
+    font-size: 14px;
+   }
+  }
+
+.booking-card-price-total {
+  margin-top: 16px;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  p {
+    margin-top: 24px;
+    font-size: 20px;
+  }
+}
+
+.booking-show-card {
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 12px; padding: 24px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  margin: 48px 24px;
+  max-width: auto;
+  background-color: $light-gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 100px;
+  .header {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-top: 0px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    h1 {
+      background: linear-gradient(to right, #dfaff6, #ffadda, #ffd6a0, #e0f5af, #a9f6d8, #9ff4e6);
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-top: 0px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+  }
+}
+
+.booking-show-card {
+
+  .booking-infos {
+    p {
+      color: rgba(0,0,0,0.5)
+    }
+  }
+}
+
+.booking-show-card {
+
+  .booking-infos {
+    h2 {
+      .unicorn-name{
+         background: linear-gradient(to right, #dfaff6, #ffadda, #ffb5bc, #ffc4a6, #ffd6a0, #f7e0a1, #edeba6, #e0f5af, #cbf7bb, #b8f7ca, #a9f6d8, #9ff4e6);
+          -webkit-background-clip: text;
+          color: transparent;
+      }
+    }
+
+  }
+}
+
+.booking-show-card {
+
+  .booking-infos-details {
+    margin-top: 16px;
+    p {
+      color: rgba(0,0,0,0.5);
+    }
+  }
+}
+
+.unicorn-index-card {
+  display: flex;
+  box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  align-items: center;
+  width: 520px;
+  height: 200px;
+  .carousel-inner {
+    width: 350px;
+    height: 200px;
+    border-radius: 10px 0px 0px 10px;
+    margin-bottom: 0px;
+    img {
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+  .card-text {
+    position: relative;
+    right: 10px;
+    h2 {
+      margin-bottom: 5px;
+    }
+    p {
+      margin-bottom: 5px;
+      margin-top: 15px;
+
+    }
+  }
+  #symbol {
+    position: relative;
+    top: -61px;
+    right: 332px;
+    i {
+      position: relative;
+      top: -38px;
+      right: 7px;
+      font-size: 40px;
+      color: #a6adec;
+    }
+    p {
+      font-size: 30px;
+      position: relative;
+      top: 20px;
+      z-index: 2;
+      right: 2px;
+    }
+  }
+}
+
+
+.booking-start {
+  padding-right: 24px;
+  display: table-cell;
+  width: 50%;
+  border-right: 1px solid rgb(221, 221, 221);
+}
+
+.booking-end {
+  padding-left: 24px;
+  display: table-cell;
+  width: 50%;
+}
+
+.far.fa-trash-alt {
+  margin-left: 10px;
+}
+
+.booking-info1 {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    color: black;
+    font-size: 20px;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+//small devices
+@media (max-width: 767px) {
+  .presentation {
+    width: 260px;
+  }
+  .booking-show-card {
+      width: 320px;
+      margin:10px;
+      padding:10px
+  }
+  h1 {
+    font-size:18px;
+  }
+
+  h2 {
+      font-size:14px
+    }
+  .content {
+    width: 260px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+.presentation {
+    width: 510px;
+  }
+  .booking-show-card {
+      width: 670px;
+      margin:10px;
+      padding:10px
+  }
+  h1 {
+    font-size:18px;
+  }
+
+  h2 {
+      font-size:14px
+    }
+  .content {
+    width: 510px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .presentation {
+    width: 710px;
+  }
+  .booking-show-card {
+      width: 800px;
+      margin:10px;
+      padding:10px
+  }
+  h1 {
+    font-size:30px;
+  }
+
+  h2 {
+      font-size:22px
+    }
+  .content {
+    width: 510px;
+  }
+
+  .container {}
+      display: flex;
+    justify-content: center;
+}
+
