@@ -4,13 +4,15 @@ const cardhover = () => {
   cardsgroup.forEach((card) => {
     card.addEventListener("mouseover", (event) => {
       card.classList.add("special-class")
-      document.querySelector(`.marker .${card.id}`).width = "50px";
-      document.querySelector(`.marker .${card.id}`).height = "50px";
+      const marker = document.querySelector(`.marker${card.id}`);
+      marker.style.width = "50px";
+      marker.style.height = "50px";
     });
     card.addEventListener("mouseout", (event) => {
       card.classList.remove("special-class")
-      document.querySelector(`.marker .${card.id}`).width = "25px";
-      document.querySelector(`.marker .${card.id}`).height = "25px";
+      const marker = document.querySelector(`.marker${card.id}`);
+      marker.style.width = "25px";
+      marker.style.height = "25px";
     });
   });
 }
