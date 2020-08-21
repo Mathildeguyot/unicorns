@@ -1,7 +1,7 @@
 <div class="index">
 
     <div class="left-index">
-      <h1 id="title-page">Toutes les licornes (<%= Unicorn.count %>)</h1>
+      <h1 id="title-page">Toutes les licornes <%= "à #{params[:search][:query]} " unless params.dig(:search, :query).nil? %>(<%= @unicorns.length %>)</h1>
 
 
     <!--   <% if policy(Unicorn).create? %>
